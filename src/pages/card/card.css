@@ -1,0 +1,17 @@
+body{
+    background-color: #FFFAEB;
+}
+
+.nav-color{
+    background-color: #832D33;
+}
+
+footer{
+    background-color: #832D33;
+    color: white;
+    text-align: center;
+    padding: 120px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

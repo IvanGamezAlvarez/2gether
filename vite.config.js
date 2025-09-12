@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         aboutUs: resolve(__dirname, "src/pages/aboutUs.html"),
+        card: resolve(__dirname, "src/pages/card.html"),
       },
     },
   },
