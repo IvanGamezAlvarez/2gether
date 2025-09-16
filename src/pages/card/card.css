@@ -43,6 +43,7 @@ h1 span {
   width: 60%;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .card {
   position: relative;
   width: 250px;
@@ -167,5 +168,10 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 1150px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
