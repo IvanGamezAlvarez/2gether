@@ -14,7 +14,7 @@ const devsData = [
     name: "Gerardo López ",
     role: "Develop Web",
     description:
-      "Entusiasta de la informática, el diseño y los videojuegos; más que un usuario, me gusta ser un creador.",
+      "Desarrollador con interés en la tecnología y el diseño, más que usar herramientas, disfruto construirlas.",
     imageUrl: "/img/cards/GerardoLopez_Portrait.jpg",
     linkedinUrl:
       "https://www.linkedin.com/in/gerardo-l%C3%B3pez1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -52,7 +52,7 @@ const devsData = [
     name: "Andres Vera",
     role: "Full Stack Developer",
     description:
-      "Entusiasta de la informática, el diseño y los videojuegos; más que un usuario, me gusta ser un creador.",
+      "Apasionado por la tecnología y por descubrir cómo las ideas se convierten en soluciones reales.",
     imageUrl: "/img/cards/AndresVera_Portrait.jpg",
     linkedinUrl: "https://www.linkedin.com/in/andresosv1996/",
     githubUrl: "https://github.com/Andresztar",
@@ -68,12 +68,12 @@ const devsData = [
   },
   {
     name: "Ariadna Ornelas",
-    role: "Full Stack Developer",
+    role: " Java Fullstack Jr",
     description:
-      "Entusiasta de la informática, el diseño y los videojuegos; más que un usuario, me gusta ser un creador.",
-    imageUrl: "/img/cards/IvanGamez_Portrait.jpg",
-    linkedinUrl: "#",
-    githubUrl: "#",
+      "Programadora orientada a crear experiencias digitales útiles y bien diseñadas.",
+    imageUrl: "/img/cards/AriadnaOrnelas_Portrait.jpg",
+    linkedinUrl: "http://www.linkedin.com/in/ariadna-ornelas",
+    githubUrl: "https://github.com/ari-adna",
   },
   {
     name: "Jose Luis Guzman",
