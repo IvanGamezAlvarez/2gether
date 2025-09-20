@@ -19,8 +19,10 @@ body {
 }
 .bg-main {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 50vw; /* ancho relativo al viewport */
+  height: 50vw;
+  max-width: 400px; /* opcional: límite máximo */
+  max-height: 400px;
   z-index: -1;
   background: linear-gradient(to right, #94d2bd, #5ba88f);
   transform: rotate(45deg);
@@ -28,6 +30,7 @@ body {
   left: 45%;
 }
 h1 {
+  display: block;
   padding: 2rem;
   padding-bottom: 1rem;
   font-weight: 700;
@@ -84,6 +87,7 @@ h1 span {
 
 .card .content span {
   position: absolute;
+  display: block;
   width: 350px;
   height: 200px;
   background: linear-gradient(to right, #0a9396, #067274);
@@ -150,6 +154,105 @@ h1 span {
 .card .links a:nth-child(4):hover {
   color: #fe0000;
 }
+.background-before-form {
+  position: relative;
+  margin-top: 5rem;
+  background-image: url("/img/cards/desktop.jpg");
+  height: 20rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.background-before-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.54); /* negro con transparencia */
+  z-index: -1; /* se pone detrás del contenido pero encima del fondo */
+}
+.background-before-form h3 {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+form {
+  text-align: center;
+  margin: auto;
+  height: auto;
+  min-height: 30rem;
+  background-color: white;
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  transition: ease-in-out 0.5s;
+}
+legend {
+  font-size: 2rem;
+  padding: 1rem;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+}
+
+input {
+  /* border-radius: 3px; */
+}
+
+.form-content {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-content label {
+  text-align: left;
+}
+.message-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.message-content textarea {
+  border-radius: 3px;
+  min-height: 10rem;
+  width: 95%;
+}
+.message-content label {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.send-button {
+  display: block;
+  height: 2rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  width: 92%;
+  background-color: #005f73;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+/* 
 footer {
   background-color: #832d33;
   color: white;
@@ -158,6 +261,16 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+} */
+
+.form-response {
+  font-weight: 500;
+}
+.sucess {
+  color: rgb(45, 132, 47);
+}
+.error {
+  color: rgb(132, 45, 45);
 }
 
 @keyframes appear {
@@ -171,7 +284,30 @@ footer {
   }
 }
 @media (max-width: 1150px) {
+  h1 {
+    padding: 0.2;
+  }
+  .main-message {
+    padding: 0.5rem;
+    width: 90%;
+  }
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  legend {
+    width: 100%;
+  }
+  .form-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-content: center;
+  }
+  form {
+    width: 90%;
+  }
+}
+@media (max-width: 670px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
 }

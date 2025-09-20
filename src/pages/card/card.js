@@ -1,5 +1,6 @@
 const cardsDiv = document.querySelector("#cards");
-
+const form = document.querySelector("#contact-form");
+const responseParraf = document.querySelector("#form-response");
 const devsData = [
   {
     name: "Ivan Gamez Avarez",
@@ -113,3 +114,23 @@ const AddingDevCards = () => {
 };
 
 AddingDevCards();
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = e.target;
+  const data = new FormData(formData);
+  const response = await fetch(formData.action, {
+    method: form.method,
+    body: data,
+    headers: { Accept: "application/json" },
+  });
+  if (response.ok) {
+    responseParraf.textContent = "¡Mensaje enviado con éxito!";
+    form.reset();
+    responseParraf.className = "sucess";
+  } else {
+    responseParraf.querySelector("#form-response").textContent =
+      "Error al enviar el mensaje. ";
+    responseParraf.className = "error";
+  }
+});

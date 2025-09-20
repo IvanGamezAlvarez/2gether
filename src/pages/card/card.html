@@ -66,6 +66,56 @@
         <div class="bg-main"></div>
       </div>
       <div id="cards" class="cards"></div>
+
+      <div class="background-before-form">
+        <h3>¿Quieres contactar con nosotros?</h3>
+      </div>
+
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/xovngnlk"
+        method="POST"
+      >
+        <fieldset>
+          <legend>¡Envianos un mensaje!</legend>
+          <div class="form-content">
+            <label for="">Nombre completo:</label>
+            <input
+              name="name"
+              type="text"
+              placeholder="Escribe tu nombre completo"
+              required
+            />
+
+            <label for="">Correo electronico:</label>
+            <input
+              type="email"
+              placeholder="Ingresa tu correo electronico"
+              name="email"
+              required
+            />
+
+            <label for="">Numero de telefono:</label>
+            <input
+              name=" phone number"
+              type="tel"
+              placeholder="Ingresa tu numero de telefono"
+              required
+            />
+          </div>
+          <div class="message-content">
+            <label for="">¿Que nos quieres contar?</label>
+            <textarea
+              placeholder="Escribe tu mensaje aqui..."
+              name="message"
+              id=""
+              required
+            ></textarea>
+          </div>
+          <p class="form-response" id="form-response"></p>
+          <input type="submit" class="send-button" />
+        </fieldset>
+      </form>
     </main>
 
     <script src="./card.js"></script>
