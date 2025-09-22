@@ -2,10 +2,26 @@ body {
   background-color: #fffaeb;
   font-family: "Montserrat", sans-serif;
 }
-
+/*Barra de navegacion*/
 .nav-color {
   background-color: #832d33;
+
 }
+
+.nav-color a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav i {
+  font-size: 22px;
+}
+
+.bi{
+    color:white;
+    font-size: 30px!important;
+}
+
 .main-message {
   width: 50%;
   margin: auto;
