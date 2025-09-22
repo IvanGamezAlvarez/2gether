@@ -1,16 +1,28 @@
-.navbar-custom {
-    background-color: #832D33;
+body {
+  background-color: #fffaeb;
+  font-family: "Montserrat", sans-serif;
 }
+/*Barra de navegacion*/
+.nav-color {
+  background-color: #832d33;
+
+}
+
+.nav-color a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav i {
+  font-size: 22px;
+}
+
 .bi{
     color:white;
-    font-size: 30px!important;
+
 }
-.nav-link{
-    font-size: 20px;
-}
-.navbar-brand{
-    font-size: 33px;
-}
+
+
 .mision-vision-container {
   width: 100%;
   padding: 0;
@@ -44,10 +56,7 @@
   max-width: 80%;
   text-align: center;
 }
-.container-fluid {
-  margin: 0;
-  padding: 0;
-}
+
 .row.g-0 {
   margin: 0;
 }
