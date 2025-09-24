@@ -1,0 +1,35 @@
+.contenedor {
+  display: flex;
+  height: 100vh;
+  background-color: green; //no-repeat center center/cover
+}
+
+/* Columna izquierda (texto sobre la imagen) */
+.izquierda {
+  flex: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+/* Columna derecha con fondo sólido */
+.derecha {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card del login */
+.login-card {
+  background: rgba(255,255,255,0.8);
+  opacity: 0.6;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  
+}
