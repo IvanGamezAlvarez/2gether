@@ -1,0 +1,99 @@
+body {
+  background-color: #fffaeb;
+  font-family: "Montserrat", sans-serif;
+}
+
+.custom-search-bar {
+  background-color: #fff0d4;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.custom-search-bar .form-control {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.custom-search-bar .form-control::placeholder {
+  color: #c98300;
+}
+
+.custom-search-bar .input-group-text i {
+  color: #c98300;
+  font-size: 1.2rem;
+}
+
+.badge-skill-filter {
+  background-color: #BB3E03;
+  color: #fff;
+}
+
+.badge-skill-filter .btn-close {
+  width: 0.5rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+  vertical-align: middle; 
+}
+
+.nav-underline .nav-link {
+  color: #005F73;
+  font-weight: 500;
+}
+
+.nav-underline .nav-link.active {
+  color: #003c54;
+  border-bottom: 2px solid #003c54;
+}
+
+.nav-underline .nav-link:hover {
+  color: #005464;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.profile-photo {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+
+.text-xs {
+  font-size: 0.7rem;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}
+
+.skills-offer {
+  background-color: #EE9B00;
+  font-size: 0.6rem;
+  padding: 0.6em 0.9em;
+}
+
+.skills-seek {
+  background-color: #29A192;
+  font-size: 0.6rem;
+  padding: 0.6em 0.9em;
+}
+
+.btn-custom {
+  background-color: #005F73;
+  border-color: #005F73;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem; 
+}
+
+.btn-custom:hover {
+  background-color: #00404d;
+  border-color: #00404d;
+  color: #fff;
+}
