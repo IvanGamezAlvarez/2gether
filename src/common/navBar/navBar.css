@@ -1,0 +1,36 @@
+body {
+  background-color: #fffaeb;
+  font-family: "Montserrat", sans-serif;
+}
+/*Barra de navegacion*/
+.navbar-brand {
+  font-family: "Lobster", sans-serif;
+}
+.navbar-brand:hover {
+  color: #ee9b00;
+}
+.navbar-toggler {
+  border: white 1px solid;
+}
+.nav-color {
+  background-color: #832d33;
+}
+
+.nav-color a {
+  color: white;
+  text-decoration: none;
+}
+.nav-color a:hover {
+  color: #ee9b00;
+}
+
+.navbar-nav i {
+  font-size: 22px;
+}
+.bi {
+  color: white;
+  font-size: 30px !important;
+}
+.bi:hover {
+  color: #ee9b00;
+}

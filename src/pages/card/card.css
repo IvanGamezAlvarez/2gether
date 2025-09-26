@@ -3,24 +3,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 /*Barra de navegacion*/
-.nav-color {
-  background-color: #832d33;
-
-}
-
-.nav-color a {
-  color: white;
-  text-decoration: none;
-}
-
-.navbar-nav i {
-  font-size: 22px;
-}
-
-.bi{
-    color:white;
-    font-size: 30px!important;
-}
 
 .main-message {
   width: 50%;
@@ -35,8 +17,8 @@ body {
 }
 .bg-main {
   position: absolute;
-  width: 50vw; /* ancho relativo al viewport */
-  height: 50vw;
+  width: 30vw; /* ancho relativo al viewport */
+  height: 30vw;
   max-width: 400px; /* opcional: límite máximo */
   max-height: 400px;
   z-index: -1;
@@ -216,7 +198,7 @@ form {
 }
 legend {
   font-size: 2rem;
-  padding: 1rem;
+  padding: 2rem;
   width: 100%;
   display: block;
   text-align: center;
