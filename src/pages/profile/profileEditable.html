@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile editable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="profileEditable.css">
+</head>
+
+<body>
+    <div class="text-center">
+        <img src="/public/img/profileEditable/head-background.png" alt="blue background editable" class="w-100">
+        <img class="avatar" src="/public/img/profileEditable/image-profile-generic.png" alt="Profile pic generic">
+        <h2>Username</h2>
+        <button type="button" class="btn btn-secondary px-5">Guardar Perfil</button>
+    </div>
+    <div class="container px-4 text-start mt-5">
+        <div class="row gx-5">
+            <div class="col-md-9 mt-5 border-end">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <h2>Sobre mí</h2>
+                    <!-- Botón de editar al lado del título -->
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="btnEdit"
+                        onclick="habilitarEdicion()">
+                        <i class="bi bi-pencil"></i> Editar
+                    </button>
+                </div>
+
+                <div class="text-box m-2">
+                    <!-- Área de texto editable -->
+                    <div class="mb-3">
+                        <textarea class="form-control text-start align-text-top" id="sobreMiTextarea" rows="6"
+                            placeholder="Escribe algo sobre ti..." oninput="verificarCambios()" disabled
+                            style="background-color: #f8f9fa; text-align: left; vertical-align: top;"></textarea>
+                    </div>
+
+                    <!-- Botones de guardar y cancelar (ocultos inicialmente) -->
+                    <div class="text-end" id="botonesAccion" style="display: none;">
+                        <button type="button" class="btn btn-secondary me-2" id="btnCancel" onclick="cancelarEdicion()">
+                            <i class="bi bi-x-lg"></i> Cancelar
+                        </button>
+                        <button type="button" class="btn btn-success" id="btnSave" onclick="guardarCambios()" disabled>
+                            <i class="bi bi-check-lg"></i> Guardar Cambios
+                        </button>
+                    </div>
+
+                    <!-- Texto estático -->
+                    <div id="textoEstatico" class="editable-text">
+
+                    </div>
+                </div>
+
+                <div class="row gx-5">
+                    <div class="col-md-6 mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <h3>Habilidades que ofrezco</h3>
+                            <button type="button" class="btn btn-outline-primary btn-sm"
+                                onclick="mostrarModal('ofrezco')">
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </div>
+                        <div id="habilidadesOfrezco" class="d-flex flex-wrap gap-2">
+                            <!-- Aquí se agregarán las habilidades dinámicamente -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <h3>Habilidades que busco</h3>
+                            <button type="button" class="btn btn-outline-primary btn-sm"
+                                onclick="mostrarModal('busco')">
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </div>
+                        <div id="habilidadesBusco" class="d-flex flex-wrap gap-2">
+                            <!-- Aquí se agregarán las habilidades dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para agregar habilidades -->
+                <div class="modal fade" id="modalHabilidad" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalTitulo">Agregar Habilidad</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" class="form-control" id="inputHabilidad"
+                                    placeholder="Nombre de la habilidad">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary"
+                                    onclick="agregarHabilidad()">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Estadisticas-->
+                <div class="row gx-5">
+                    <h2>Medallas</h2>
+                    <div class="col-md-12 mt-5">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mt-5">
+                <h2>Opiniones</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h2 class="mb-4">Publicación</h2>
+
+        <div class="row">
+            <!-- Ejemplo de publicación -->
+            <div class="col-md-12 col-lg-12">
+                <div class="card post-card">
+                    <img src="/public/img/profileEditable/man-working-with-pencil.png" class="card-img-top post-image"
+                        alt="Imagen de publicación">
+                    <div class="card-body">
+                        <h5 class="card-title">King Kong</h5>
+                        <p class="card-text">Un poco de mi trabajo</p>
+                        <a href="#" class="btn btn-primary">Ver Publicación</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- javascript -->
+    <script src="./profileEditable.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
