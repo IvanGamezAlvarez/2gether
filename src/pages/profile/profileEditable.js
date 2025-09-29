@@ -1,3 +1,208 @@
+// Función para cambiar el banner
+function cambiarBanner(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            document.getElementById('bannerImage').src = e.target.result;
+            // Aquí puedes guardar la imagen en tu base de datos o localStorage
+            localStorage.setItem('bannerPersonalizado', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Función para cambiar el avatar
+function cambiarAvatar(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            document.getElementById('avatarImage').src = e.target.result;
+            // Aquí puedes guardar la imagen en tu base de datos o localStorage
+            localStorage.setItem('avatarPersonalizado', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Cargar imágenes guardadas al iniciar (opcional)
+document.addEventListener('DOMContentLoaded', function() {
+    const bannerGuardado = localStorage.getItem('bannerPersonalizado');
+    const avatarGuardado = localStorage.getItem('avatarPersonalizado');
+    
+    if (bannerGuardado) {
+        document.getElementById('bannerImage').src = bannerGuardado;
+    }
+    
+    if (avatarGuardado) {
+        document.getElementById('avatarImage').src = avatarGuardado;
+    }
+    
+    // ... el resto de tu código de inicialización
+});
+// Función para editar el nombre de usuario
+function editarUsername() {
+    const usernameElement = document.getElementById('usernameText');
+    const currentUsername = usernameElement.textContent;
+    
+    // Crear input para editar
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentUsername;
+    input.className = 'form-control form-control-sm d-inline-block w-auto text-center';
+    input.style.fontSize = '1.5rem';
+    input.style.fontWeight = 'bold';
+    input.maxLength = 20; // Límite de 20 caracteres
+    
+    // Reemplazar el h2 con el input
+    usernameElement.replaceWith(input);
+    input.focus();
+    input.select();
+    
+    // Botones de acción
+    const saveBtn = document.createElement('button');
+    saveBtn.className = 'btn btn-success btn-sm ms-2';
+    saveBtn.innerHTML = '<i class="bi bi-check"></i>';
+    saveBtn.onclick = function() {
+        const validatedUsername = validarUsername(input.value.trim());
+        if (validatedUsername !== false) {
+            guardarUsername(validatedUsername);
+        }
+    };
+    
+    const cancelBtn = document.createElement('button');
+    cancelBtn.className = 'btn btn-secondary btn-sm ms-1';
+    cancelBtn.innerHTML = '<i class="bi bi-x"></i>';
+    cancelBtn.onclick = function() {
+        cancelarEdicionUsername(currentUsername);
+    };
+    
+    // Ocultar botón de editar temporalmente
+    document.getElementById('editUsernameBtn').style.display = 'none';
+    
+    // Insertar botones de acción
+    input.parentNode.appendChild(saveBtn);
+    input.parentNode.appendChild(cancelBtn);
+    
+    // Validar en tiempo real mientras escribe
+    input.addEventListener('input', function() {
+        validarInputEnTiempoReal(this);
+    });
+    
+    // Guardar al presionar Enter
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const validatedUsername = validarUsername(input.value.trim());
+            if (validatedUsername !== false) {
+                guardarUsername(validatedUsername);
+            }
+        }
+    });
+}
+
+// Función para validar el username
+function validarUsername(username) {
+    // Verificar que no esté vacío
+    if (!username) {
+        alert('El nombre de usuario no puede estar vacío');
+        return false;
+    }
+    
+    // Verificar longitud máxima
+    if (username.length > 20) {
+        alert('El nombre de usuario no puede tener más de 20 caracteres');
+        return false;
+    }
+    
+    // Verificar caracteres permitidos (solo letras, números y espacios)
+    const regex = /^[a-zA-Z0-9 ]+$/;
+    if (!regex.test(username)) {
+        alert('Solo se permiten letras, números y espacios');
+        return false;
+    }
+    
+    // Verificar espacios consecutivos (más de 1 espacio seguido)
+    if (/\s{2,}/.test(username)) {
+        alert('No se permiten más de un espacio consecutivo');
+        return false;
+    }
+    
+    // Limpiar espacios extra al inicio y final, y espacios consecutivos
+    return username.replace(/\s+/g, ' ').trim();
+}
+
+// Función para validar en tiempo real mientras escribe
+function validarInputEnTiempoReal(input) {
+    let value = input.value;
+    
+    // Remover caracteres no permitidos
+    value = value.replace(/[^a-zA-Z0-9 ]/g, '');
+    
+    // Limitar a 20 caracteres
+    if (value.length > 20) {
+        value = value.substring(0, 20);
+    }
+    
+    // Limitar espacios consecutivos (máximo 1 espacio)
+    value = value.replace(/\s+/g, ' ');
+    
+    // Actualizar el valor del input
+    input.value = value;
+}
+
+// Función para guardar el nuevo username
+function guardarUsername(newUsername) {
+    // Crear nuevo elemento h2
+    const newUsernameElement = document.createElement('h2');
+    newUsernameElement.className = 'mb-0';
+    newUsernameElement.id = 'usernameText';
+    newUsernameElement.textContent = newUsername;
+    
+    // Reemplazar el input
+    const input = document.querySelector('input[type="text"]');
+    input.replaceWith(newUsernameElement);
+    
+    // Remover botones de acción
+    document.querySelectorAll('.btn-success, .btn-secondary').forEach(btn => {
+        if (btn.closest('.d-flex')) {
+            btn.remove();
+        }
+    });
+    
+    // Mostrar botón de editar nuevamente
+    document.getElementById('editUsernameBtn').style.display = 'inline-block';
+    
+    // Guardar en localStorage
+    localStorage.setItem('username', newUsername);
+    
+    console.log('Username guardado:', newUsername);
+}
+
+// Función para cancelar la edición
+function cancelarEdicionUsername(oldUsername) {
+    // Crear nuevo elemento h2 con el username original
+    const usernameElement = document.createElement('h2');
+    usernameElement.className = 'mb-0';
+    usernameElement.id = 'usernameText';
+    usernameElement.textContent = oldUsername;
+    
+    // Reemplazar el input
+    const input = document.querySelector('input[type="text"]');
+    input.replaceWith(usernameElement);
+    
+    // Remover botones de acción
+    document.querySelectorAll('.btn-success, .btn-secondary').forEach(btn => {
+        if (btn.closest('.d-flex')) {
+            btn.remove();
+        }
+    });
+    
+    // Mostrar botón de editar nuevamente
+    document.getElementById('editUsernameBtn').style.display = 'inline-block';
+}
 let textoOriginal = '';
 let enModoEdicion = false;
 
@@ -171,3 +376,15 @@ function eliminarHabilidad(boton) {
     const habilidadElement = boton.closest('.habilidad-badge');
     habilidadElement.remove();
 }
+// Inicializar tooltips para las medallas
+document.addEventListener('DOMContentLoaded', function() {
+    // ... tu código existente ...
+    
+    // Inicializar tooltips de Bootstrap
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl, {
+            delay: { show: 300, hide: 100 }
+        });
+    });
+});
