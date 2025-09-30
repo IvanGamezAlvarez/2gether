@@ -116,9 +116,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
-.footer-main {
-  background-color: #832d33;
-}
+
 .bg-custom {
   background-color: #9b2226;
 }
@@ -126,6 +124,7 @@ body {
   height: 500px;
   width: 100%;
 }
+
 .number-icon {
   background-color: seagreen;
   color: white;

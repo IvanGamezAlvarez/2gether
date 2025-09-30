@@ -1,5 +1,4 @@
-import { insertDiv } from "/src/common/navBar/navBar.js";
-import "/src/common/navBar/navBar.css";
+import { addElements } from "/src/common/navElements.js";
 
 const cardsDiv = document.querySelector("#cards");
 const form = document.querySelector("#contact-form");
@@ -138,6 +137,4 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  insertDiv();
-});
+addElements();
