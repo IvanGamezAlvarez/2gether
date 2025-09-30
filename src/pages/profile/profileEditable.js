@@ -319,7 +319,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ocultar el textarea inicialmente y mostrar el texto estático
     textarea.style.display = 'none';
     textoEstatico.style.display = 'block';
+    previewImage('coverInput', 'coverImage');
+    previewImage('profileInput', 'profileImage');
 });
+
+
+    
 let tipoHabilidadActual = '';
 
 function mostrarModal(tipo) {

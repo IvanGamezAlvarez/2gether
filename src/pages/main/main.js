@@ -1,8 +1,21 @@
-import { insertDiv } from "/src/common/navBar/navBar.js";
-import "/src/common/navBar/navBar.css";
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
 
-console.log("hola amigos");
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  insertDiv();
+document.getElementById('next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
 });
+
+document.getElementById('prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+});
+
+// Mostrar la primera slide al cargar
+showSlide(currentIndex);
