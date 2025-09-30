@@ -18,14 +18,9 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg nav-color">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">2gether.com</a>
-          
-
-        </div>
-      </nav>
+      <div id="navbar"></div>
     </header>
+
     <main>
       <div>
 
@@ -33,31 +28,53 @@
 
 
 
-      <div class="carousel">
-    <div class="slide active">
-      <img src="guitarra.jpg" alt="Enseña a tocar guitarra" />
-      <div class="caption">Enseña a tocar guitarra</div>
-    </div>
-    <div class="slide">
-      <img src="programacion.jpg" alt="Aprende programación" />
-      <div class="caption">Aprende programación</div>
-    </div>
-    <div class="slide">
-      <img src="frances.jpg" alt="Enseña francés" />
-      <div class="caption">Enseña francés</div>
-    </div>
-    <div class="slide">
-      <img src="piano.jpg" alt="Aprende a tocar el piano" />
-      <div class="caption">Aprende a tocar el piano</div>
+    <div class="carousel container">
+  <div class="slide active">
+    <!-- Primera fila -->
+    <div class="row mb-4">
+      <div class="col-3">
+        <div class="image-box">
+          <img src="/public/img/main/guitarra.jpg" alt="Guitarra" class="img-fluid" />
+          <div class="caption">Enseña a tocar guitarra</div>
+        </div>
+      </div>
+      <div class="col-8 offset-1">
+        <div class="image-box">
+          <img src="/public/img/main/programacion.jpg" alt="Programación" class="img-fluid" />
+          <div class="caption">Aprende programación</div>
+        </div>
+      </div>
     </div>
 
-    <div class="nav-buttons">
-      <button id="prev">←</button>
-      <button id="next">→</button>
+    <!-- Segunda fila -->
+    <div class="row">
+      <div class="col-8">
+        <div class="image-box">
+          <img src="/public/img/main/paris.jpg" alt="Francés" class="img-fluid" />
+          <div class="caption">Enseña francés</div>
+        </div>
+      </div>
+      <div class="col-3 offset-1">
+        <div class="image-box">
+          <img src="/public/img/main/piano.jpg" alt="Piano" class="img-fluid" />
+          <div class="caption">Aprende a tocar el piano</div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Botones de navegación -->
+  <div class="nav-buttons text-center mt-3">
+    <button id="prev" class="btn btn-outline-primary">←</button>
+    <button id="next" class="btn btn-outline-primary">→</button>
+  </div>
+</div>
+
+
+
+
   <script src="main.js"></script>
+  
 
     </main>
 
