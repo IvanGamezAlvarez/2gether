@@ -3,25 +3,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 /*Barra de navegacion*/
-.nav-color {
-  background-color: #832d33;
-
-}
-
-.nav-color a {
-  color: white;
-  text-decoration: none;
-}
-
-.navbar-nav i {
-  font-size: 22px;
-}
-
-.bi{
-    color:white;
-
-}
-
 
 .mision-vision-container {
   width: 100%;
@@ -45,7 +26,7 @@ body {
   text-align: center;
 }
 .vision-full-section {
-  background-color: #94D2BD;
+  background-color: #94d2bd;
   padding: 3rem;
   display: flex;
   align-items: center;
@@ -60,8 +41,8 @@ body {
 .row.g-0 {
   margin: 0;
 }
-.values-section{
-    background-color: #EE9B00;
+.values-section {
+  background-color: #ee9b00;
 }
 .value-img {
   width: 68px;
@@ -77,40 +58,39 @@ body {
   border-radius: 50%;
   flex-shrink: 0;
 }
-#carouselExample{
-  background-color:#AE2012 ;
+#carouselExample {
+  background-color: #ae2012;
 }
-.carousel-title{
+.carousel-title {
   font-family: "Rouge Script", cursive;
-  font-size:60px;
+  font-size: 60px;
   font-style: normal;
 }
 .carousel-img-responsive {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
-
 @media (min-width: 768px) {
-    .carousel-img-responsive {
-        height: 450px;
-    }
+  .carousel-img-responsive {
+    height: 450px;
+  }
 }
 
 @media (max-width: 767.98px) {
-    .carousel-img-responsive {
-        height: 350px;
-    }
+  .carousel-img-responsive {
+    height: 350px;
+  }
 }
-.carousel-control-prev, 
+.carousel-control-prev,
 .carousel-control-next {
-    width: 5%;
+  width: 5%;
 }
 .card {
   border: none;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 .card:hover {
@@ -118,10 +98,10 @@ body {
 }
 .card-body {
   padding: 2rem;
-  background-color: #E9D8A6;
+  background-color: #e9d8a6;
 }
-.testimonials-section{
-    background-color:#001219;
+.testimonials-section {
+  background-color: #001219;
 }
 .profile-img-container {
   width: 100px;
@@ -136,27 +116,27 @@ body {
   height: 100%;
   object-fit: cover;
 }
-.footer-main{
-    background-color: #832D33;
+.footer-main {
+  background-color: #832d33;
 }
 .bg-custom {
-  background-color: #9B2226;
+  background-color: #9b2226;
 }
 #map {
   height: 500px;
   width: 100%;
 }
 .number-icon {
-    background-color: seagreen;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
-    font-weight: bold;
-    border: 2px solid white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: seagreen;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .number-icon div {
-    margin-top: -1px;
+  margin-top: -1px;
 }

@@ -1,0 +1,266 @@
+/* Estilos para el body y el contenedor principal para que el footer se quede abajo */
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos del navbar */
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    color: #212466;
+    
+}
+.site-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea al inicio para que no esté pegado al footer */
+    padding-top: 50px; /* Espacio para el navbar */
+    padding-bottom: 20px;
+}
+.img-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5); /* Oscurece las imágenes para que el texto sea legible */
+}
+
+
+/* Estilos para el carrusel de fondo */
+.carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.carousel-inner, .carousel-item, .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 28, 67, 0.5); /* Overlay oscuro para mejor legibilidad */
+}
+
+/* Estilos para el selector de foto de perfil */
+.foto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Oculta el input original */
+#subir-foto {
+  display: none;
+}
+
+/* Estiliza la etiqueta para que parezca un botón */
+.selector-foto {
+  background-color: #173352;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.selector-foto:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para la vista previa de la imagen */
+.vista-previa {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 15px;
+  border: 2px solid #ddd;
+  display: none; /* Oculta la imagen por defecto */
+}
+
+
+
+/* Estilos para el contenedor del formulario */
+.container-form {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.card {
+    background: rgba(81, 102, 135, 0.9);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.card-header h2 {
+    font-family: 'Lobster', cursive;
+    color: #0e1d2e;
+}
+
+.btn-social {
+    width: 30%; /* Para alinear los botones de redes sociales */
+}
+
+/* estilos para mayor de edad */
+
+.edad-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.mayor-edad {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.menor-edad {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.error {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/*nivel educativo*/
+.educacion-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+
+/* Estilos para la geolocalización */
+
+.ubicacion-container {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#obtenerUbicacionBtn {
+    background-color: #1d3754;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ubicacionInfo {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+
+
+
+/* CSS Básico para la Responsividad (styles.css) */
+
+.form-row {
+    display: flex; /* Habilitar Flexbox */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    gap: 20px; /* Espacio entre las columnas */
+    margin-bottom: 15px;
+}
+
+.col-md-6 {
+    flex: 1 1 calc(50% - 10px); /* Ocupa el 50% del espacio menos la mitad del gap */
+    min-width: 250px; /* Asegura un ancho mínimo para que no se compriman demasiado */
+}
+
+/* ----------------------------------------------------------------- */
+/* MEDIA QUERY para Pantallas Pequeñas (ej. móviles) */
+/* ----------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; /* Apilar los elementos verticalmente */
+        gap: 0;
+    }
+    
+    .col-md-6 {
+        flex: 1 1 100%; /* Ocupa el 100% del ancho */
+        margin-bottom: 15px; /* Añadir espacio entre los campos apilados */
+    }
+}
+
+
+/* Estilo para los mensajes de validación (asumiendo clases de Bootstrap) */
+.invalid-feedback {
+    color: red;
+    font-size: 0.85em;
+    display: none; /* Ocultar por defecto */
+}
+
+.form-control:invalid:not(:placeholder-shown) ~ .invalid-feedback,
+.form-control:invalid.was-validated ~ .invalid-feedback {
+    display: block; /* Mostrar solo cuando la validación es requerida */
+}
+
+
+

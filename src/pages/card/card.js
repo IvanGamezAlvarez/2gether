@@ -1,3 +1,6 @@
+import { insertDiv } from "/src/common/navBar/navBar.js";
+import "/src/common/navBar/navBar.css";
+
 const cardsDiv = document.querySelector("#cards");
 const form = document.querySelector("#contact-form");
 const responseParraf = document.querySelector("#form-response");
@@ -133,4 +136,8 @@ form.addEventListener("submit", async (e) => {
       "Error al enviar el mensaje. ";
     responseParraf.className = "error";
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  insertDiv();
 });
