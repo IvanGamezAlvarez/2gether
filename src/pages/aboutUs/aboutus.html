@@ -1,89 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="./aboutUs.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar navbar-expand-lg nav-color">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/index.html">2gether.com</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <i class="bi bi-list"></i>
-    </button>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./aboutUs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="navbar"></div>
+    </header>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="aboutus.html">Sobre nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../card/card.html">Tarjetas</a>
-        </li>
-      </ul>
-
-      <ul class="navbar-nav d-flex flex-lg-row flex-column align-items-lg-end align-items-start ms-lg-auto ms-0">
-  <li class="nav-item">
-    <a class="nav-link" href="#"><i class="bi bi-chat-fill p-3"></i></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#"><i class="bi bi-person-fill p-3"></i></a>
-  </li>
-</ul>
-    </div>
-  </div>
-</nav>
-
-<!-- What is 2gether?-->
-<ul>
-  <section class="about-section pt-5 px-5">
-    <div class="container ps-0">
-      <div class="row align-items-center">
-        <div class="col-md-9 ps-0">
-          <h1>¿QUÉ ES 2GETHER?</h1>
-          <div class="about-section-subtitle">
-            <p>2gether es una plataforma de aprendizaje colaborativo e inclusivo que transforma la manera en que las personas adquieren y comparten conocimientos. Frente a las barreras económicas y los modelos unidireccionales de la educación tradicional, 2gether propone un sistema de trueque justo basado en créditos: cuando enseñas, ganas el derecho a aprender. Nuestra comunidad conecta a personas de diversos backgrounds culturales y áreas de expertise—desde idiomas y tecnología hasta arte y oficios—para que todos puedan ser tanto aprendices como facilitadores en un entorno gamificado, seguro y centrado en la interacción humana. Más que una plataforma, 2gether es una red social donde el valor principal es la colaboración, democratizando el acceso al conocimiento y fomentando un aprendizaje continuo, práctico y enriquecido por la diversidad.</p>
+    <!-- What is 2gether?-->
+    <ul>
+      <section class="about-section pt-5 px-5">
+        <div class="container ps-0">
+          <div class="row align-items-center">
+            <div class="col-md-9 ps-0">
+              <h1>¿QUÉ ES 2GETHER?</h1>
+              <div class="about-section-subtitle">
+                <p>
+                  2gether es una plataforma de aprendizaje colaborativo e inclusivo que transforma la manera en que las personas adquieren y comparten conocimientos. Frente a las barreras económicas y los modelos unidireccionales de la educación tradicional, 2gether propone un sistema de trueque justo basado en créditos: cuando enseñas, ganas el derecho a aprender. Nuestra comunidad conecta a personas de diversos backgrounds culturales y áreas de expertise—desde idiomas y tecnología hasta arte y oficios—para que todos puedan ser tanto aprendices como facilitadores en un entorno gamificado, seguro y centrado en la interacción humana. Más que una plataforma, 2gether es una red social donde el valor principal es la colaboración, democratizando el acceso al conocimiento y fomentando un aprendizaje continuo, práctico y enriquecido por la diversidad.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <img
+                src="/img/about-us-two-people-exchanging-skills.png"
+                alt="Two people exchanging skills"
+                class="img-fluid"
+              />
+            </div>
           </div>
         </div>
-        <div class="col-md-3 text-center">
-          <img src="/img/about-us-two-people-exchanging-skills.png" alt="Two people exchanging skills" class="img-fluid">
-        </div>
-      </div>
-    </div>
-</section>
-</ul>
-<ul class="mision-vision-container">
-  <section class="about-section pt-2 px-0">
-    <div class="container-fluid p-0">
-      <div class="row align-items-stretch justify-content-center g-0">
-        <div class="col-md-6 mision-full-section">
-          <div class="mision-content">
-            <h2 class="about-section-title-mision mb-5">Nuestra misión</h2>
-            <p class="about-section-subtitle">Nuestra misión es operar una plataforma que funcione como un mercado de
+      </section>
+    </ul>
+    <ul class="mision-vision-container">
+      <section class="about-section pt-2 px-0">
+        <div class="container-fluid p-0">
+          <div class="row align-items-stretch justify-content-center g-0">
+            <div class="col-md-6 mision-full-section">
+              <div class="mision-content">
+                <h2 class="about-section-title-mision mb-5">Nuestra misión</h2>
+                <p class="about-section-subtitle">
+                  Nuestra misión es operar una plataforma que funcione como un mercado de
 trueque de habilidades, donde la única moneda de cambio es el tiempo y el
 conocimiento. Garantizando que cada intercambio sea equitativo, medible y de
 valor tangible para nuestros usuarios, transformando el aprendizaje en un acto de
 colaboración pura.
-</p>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 vision-full-section">
+              <div class="vision-content">
+                <h2 class="about-section-title-vision mb-5">Nuestra visión</h2>
+                <p class="about-section-subtitle">
+                  Aspiramos a destronar el nicho del aprendiz autodidacta. Crear un mundo donde
+el querer aprender algo no sea un curso pagado, sino conectarte con una red de
+pares dispuestos a intercambiar tiempo y conocimiento, creando así amistades y
+comunidades alrededor de habilidades compartidas.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-6 vision-full-section">
           <div class="vision-content">
             <h2 class="about-section-title-vision mb-5">Nuestra visión</h2>
-            <p class="about-section-subtitle">Aspiramos a destronar el nicho del aprendiz autodidacta. Crear un mundo donde
-el querer aprender algo no sea un curso pagado, sino conectarte con una red de
-pares dispuestos a intercambiar tiempo y conocimiento, creando así amistades y
-comunidades alrededor de habilidades compartidas.</p>
+            <p class="about-section-subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident soluta laboriosam ad repellat. Explicabo illo dolorem iure atque consequatur fuga ex, harum asperiores. Consequuntur fugiat distinctio tenetur, voluptate architecto sequi.
+            Cupiditate, quia commodi eum saepe amet quisquam soluta minima error voluptates magni iusto eos. Obcaecati, quos modi nihil dolorem cupiditate sed quia debitis culpa illum, tempore pariatur, esse repellendus natus.</p>
           </div>
         </div>
       </div>
@@ -91,118 +100,226 @@ comunidades alrededor de habilidades compartidas.</p>
   </section>
 </ul>
 
-<!-- Our Values-->
-<section class="values-section">
-  <div class="container">
-    <h2 class="about-section-title text-center mb-4 pt-4">Valores</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-4">
-        <ul class="list-unstyled">
-          <li class="d-flex align-items-center mb-4">
-            <span class="bullet-point me-3"></span>
-            <h3 class="py-4 mb-0 me-2">Comunicación asertiva</h3>
-            <img src="/img/image-chat.png" alt="Comunicación" class="value-img">
-          </li>
-          <li class="d-flex align-items-center mb-4">
-            <span class="bullet-point me-3"></span>
-            <h3 class="py-4 mb-0 me-2">Responsabilidad</h3>
-            <img src="/img/responsability-value.png" alt="Responsabilidad" class="value-img">
-          </li>
-          <li class="d-flex align-items-center mb-4">
-            <span class="bullet-point me-3"></span>
-            <h3 class="py-4 mb-0 me-2">Empatía</h3>
-            <img src="/img/empaty-value.png" alt="Empatía" class="value-img">
-          </li>
-        </ul>
+    <!-- Our Values-->
+    <section class="values-section">
+      <div class="container">
+        <h2 class="about-section-title text-center mb-4 pt-4">Valores</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-center mb-4">
+                <span class="bullet-point me-3"></span>
+                <h3 class="py-4 mb-0 me-2">Comunicación asertiva</h3>
+                <img
+                  src="/img/image-chat.png"
+                  alt="Comunicación"
+                  class="value-img"
+                />
+              </li>
+              <li class="d-flex align-items-center mb-4">
+                <span class="bullet-point me-3"></span>
+                <h3 class="py-4 mb-0 me-2">Responsabilidad</h3>
+                <img
+                  src="/img/responsability-value.png"
+                  alt="Responsabilidad"
+                  class="value-img"
+                />
+              </li>
+              <li class="d-flex align-items-center mb-4">
+                <span class="bullet-point me-3"></span>
+                <h3 class="py-4 mb-0 me-2">Empatía</h3>
+                <img
+                  src="/img/empaty-value.png"
+                  alt="Empatía"
+                  class="value-img"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 offset-md-1">
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-center mb-4">
+                <span class="bullet-point me-3"></span>
+                <h3 class="py-4 mb-0 me-2">Compromiso</h3>
+                <img
+                  src="/img/commitment-value.png"
+                  alt="Compromiso"
+                  class="value-img"
+                />
+              </li>
+              <li class="d-flex align-items-center mb-4">
+                <span class="bullet-point me-3"></span>
+                <h3 class="py-4 mb-0 me-2">Colaboración</h3>
+                <img
+                  src="/img/collaboration-value.png"
+                  alt="Colaboración"
+                  class="value-img"
+                />
+              </li>
+              <li class="d-flex align-items-center mb-4">
+                <span class="bullet-point me-3"></span>
+                <h3 class="py-4 mb-0 me-2">Confianza</h3>
+                <img
+                  src="/img/trust-value.png"
+                  alt="Confianza"
+                  class="value-img"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4 offset-md-1">
-        <ul class="list-unstyled">
-          <li class="d-flex align-items-center mb-4">
-            <span class="bullet-point me-3"></span>
-            <h3 class="py-4 mb-0 me-2">Compromiso</h3>
-            <img src="/img/commitment-value.png" alt="Compromiso" class="value-img">
-          </li>
-          <li class="d-flex align-items-center mb-4">
-            <span class="bullet-point me-3"></span>
-            <h3 class="py-4 mb-0 me-2">Colaboración</h3>
-            <img src="/img/collaboration-value.png" alt="Colaboración" class="value-img">
-          </li>
-          <li class="d-flex align-items-center mb-4">
-            <span class="bullet-point me-3"></span>
-            <h3 class="py-4 mb-0 me-2">Confianza</h3>
-            <img src="/img/trust-value.png" alt="Confianza" class="value-img">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!--Carousel of photos-->
-<div id="carouselExample" class="carousel slide" data-bs-wrap="true">
-  <h2 class="carousel-title text-center pt-5 pb-3 text-white">Galería de fotos <em>"Detrás de líneas de código"</em></h2>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row justify-content-center mx-0">
-        <div class="col-md-6 col-12 px-0">
-          <img src="/img/roxana-setup.jpg" class="carousel-img-responsive" alt="Roxana setup">
+    <!--Carousel of photos-->
+    <div id="carouselExample" class="carousel slide" data-bs-wrap="true">
+      <h2 class="carousel-title text-center pt-5 pb-3 text-white">
+        Galería de fotos <em>"Detrás de líneas de código"</em>
+      </h2>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center mx-0">
+            <div class="col-md-6 col-12 px-0">
+              <img
+                src="/img/roxana-setup.jpg"
+                class="carousel-img-responsive"
+                alt="Roxana setup"
+              />
+            </div>
+            <div class="col-md-6 col-12 px-0 d-none d-md-block">
+              <img
+                src="/img/gerry-setup.jpeg"
+                class="carousel-img-responsive"
+                alt="Gerry setup"
+              />
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 col-12 px-0 d-none d-md-block">
-          <img src="/img/gerry-setup.jpeg" class="carousel-img-responsive" alt="Gerry setup">
+        <div class="carousel-item">
+          <div class="row justify-content-center mx-0">
+            <div class="col-md-6 col-12 px-0">
+              <img
+                src="/img/ariadna-setup.png"
+                class="carousel-img-responsive"
+                alt="Ariadna setup"
+              />
+            </div>
+            <div class="col-md-6 col-12 px-0 d-none d-md-block">
+              <img
+                src="/img/ivan-setup.png"
+                class="carousel-img-responsive"
+                alt="Ivan setup"
+              />
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-item">
-      <div class="row justify-content-center mx-0">
-        <div class="col-md-6 col-12 px-0">
-          <img src="/img/ariadna-setup.png" class="carousel-img-responsive" alt="Ariadna setup">
-        </div>
-        <div class="col-md-6 col-12 px-0 d-none d-md-block">
-          <img src="/img/ivan-setup.png" class="carousel-img-responsive" alt="Ivan setup">
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-  
-</div>
 
-<!-- Map of our contributors-->
-<div class="bg-custom text-white p-4">
+    <!-- Map of our contributors-->
+    <div class="bg-custom text-white p-4">
       <div class="container">
         <h2>Explora la comunidad</h2>
         <p>
-          Nuestros colaboradores de <strong>2gether.com</strong> son totalmente responsables de sus servicios y ofrecen calidad comprometidos con nuestra comunidad. <br>
-          En este mapa se muestra la ubicación de cada persona que ha contribuido.
+          Nuestros colaboradores de <strong>2gether.com</strong> son totalmente
+          responsables de sus servicios y ofrecen calidad comprometidos con
+          nuestra comunidad. <br />
+          En este mapa se muestra la ubicación de cada persona que ha
+          contribuido.
         </p>
       </div>
     </div>
     <div id="map-container" class="mt-0">
-    <div id="map"></div>
-</div>
+      <div id="map"></div>
+    </div>
 
-<!-- Testimonials section -->
-<section class="testimonials-section">
-  <div class="container">
-    <h2 class="about-section-title pt-4 mb-0 text-white">Testimonios de la comunidad</h2>
-    <p class="about-section-subtitle mb-3 pb-2 text-white">Inspírate y descubre el poder de una comunidad donde cada habilidad cuenta y cada conexión transforma</p>
-    <div class="row justify-content-center">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body text-center">
-            <div class="profile-img-container mx-auto mb-3">
-              <img src="/img/tania-gayosso-profile.jpg" alt="Tania Gayosso" class="profile-img rounded-circle">
+    <!-- Testimonials section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="about-section-title pt-4 mb-0 text-white">
+          Testimonios de la comunidad
+        </h2>
+        <p class="about-section-subtitle mb-3 pb-2 text-white">
+          Inspírate y descubre el poder de una comunidad donde cada habilidad
+          cuenta y cada conexión transforma
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="profile-img-container mx-auto mb-3">
+                  <img
+                    src="/img/tania-gayosso-profile.jpg"
+                    alt="Tania Gayosso"
+                    class="profile-img rounded-circle"
+                  />
+                </div>
+                <h5 class="card-title">Tania Gayosso</h5>
+                <p class="text-secondary"><em>Hace 1 semana</em></p>
+                <p class="card-text">
+                  "Soñaba con aprender a preparar mi propia pasta artesanal, lo conseguí, y a cambio compartí mi pasión por el güiro caribeño, ¡es increíble!."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="profile-img-container mx-auto mb-3">
+                  <img
+                    src="/img/sergio-torres-profile.jpg"
+                    alt="Sergio Torres"
+                    class="profile-img rounded-circle"
+                  />
+                </div>
+                <h5 class="card-title">Sergio Torres</h5>
+                <p class="text-secondary"><em>Hace 1 semana</em></p>
+                <p class="card-text">
+                  "Vivamus luctus eros aliquet convallis ultricies. Mauris augue
+                  massa, ultricies non ligula."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <div class="profile-img-container mx-auto mb-3">
+                  <img
+                    src="/img/blanca-tobon-profile.jpg"
+                    alt="Blanca Tobón"
+                    class="profile-img rounded-circle"
+                  />
+                </div>
+                <h5 class="card-title">Blanca Tobón</h5>
+                <p class="text-secondary"><em>Hace 1 semana</em></p>
+                <p class="card-text">
+                  "Suspendisse varius enim in eros elementum tristique. Duis
+                  cursus, mi quis viverra ornare."
+                </p>
+              </div>
             </div>
             <h5 class="card-title">Tania Gayosso</h5>
             <p class="text-secondary"><em>Hace 1 semana</em></p>
-            <p class="card-text">"Soñaba con aprender a preparar mi propia pasta artesanal, lo consegui, y a cambio compartí mi pasión por el güiro caribeño, ¡es increíble!."</p>
+            <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris."</p>
           </div>
         </div>
       </div>
@@ -212,7 +329,7 @@ comunidades alrededor de habilidades compartidas.</p>
             <div class="profile-img-container mx-auto mb-3">
               <img src="/img/sergio-torres-profile.jpg" alt="Sergio Torres" class="profile-img rounded-circle">
             </div>
-            <h5 class="card-title">Javier Nuñez</h5>
+            <h5 class="card-title">Sergio Torres</h5>
             <p class="text-secondary"><em>Hace 1 semana</em></p>
             <p class="card-text">"Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula."</p>
           </div>
@@ -234,46 +351,50 @@ comunidades alrededor de habilidades compartidas.</p>
   </div>
 </section>
 
-<footer class="footer-main text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-lg-3">
-                    <h5 class="border-bottom pb-1 w-75">Compañía</h5>
-                    <p>Sobre nosotros</p>
-                    <p>Equipo</p>
-                    <p>Afíliate</p>
-                    <p>Trabaja con nosotros</p>
-                </div>
-                <div class="col-md-3 col-lg-3">
-                    <h5 class="border-bottom pb-2 w-75">Ayuda</h5>
-                    <p>Preguntas frecuentes (FAQ)</p>
-                    <p>Guía de uso</p>
-                    <p>Reportar un problema</p>
-                    <p>Centro de aprendizaje</p>
-                </div>
-                <div class="col-md-3 col-lg-3">
-                    <h5 class="border-bottom pb-2 w-75">Síguenos</h5>
-                    <p>Preguntas frecuentes (FAQ)</p>
-                    <p>Guía de uso</p>
-                    <p>Reportar un problema</p>
-                    <p>Centro de aprendizaje</p>
-                </div>
-                <div class="col-md-3 col-lg-3">
-                    <h5 class="border-bottom pb-2 w-75">Explora</h5>
-                    <p>Cursos destacados</p>
-                    <p>Eventos y webinars</p>
-                    <p>Afíliate / Publica tu anuncio</p>
-                    <p>Eventos o webinars</p>
-                </div>
-            </div>
+    <footer class="footer-main text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-lg-3">
+            <h5 class="border-bottom pb-1 w-75">Compañía</h5>
+            <p>Sobre nosotros</p>
+            <p>Equipo</p>
+            <p>Afíliate</p>
+            <p>Trabaja con nosotros</p>
+          </div>
+          <div class="col-md-3 col-lg-3">
+            <h5 class="border-bottom pb-2 w-75">Ayuda</h5>
+            <p>Preguntas frecuentes (FAQ)</p>
+            <p>Guía de uso</p>
+            <p>Reportar un problema</p>
+            <p>Centro de aprendizaje</p>
+          </div>
+          <div class="col-md-3 col-lg-3">
+            <h5 class="border-bottom pb-2 w-75">Síguenos</h5>
+            <p>Preguntas frecuentes (FAQ)</p>
+            <p>Guía de uso</p>
+            <p>Reportar un problema</p>
+            <p>Centro de aprendizaje</p>
+          </div>
+          <div class="col-md-3 col-lg-3">
+            <h5 class="border-bottom pb-2 w-75">Explora</h5>
+            <p>Cursos destacados</p>
+            <p>Eventos y webinars</p>
+            <p>Afíliate / Publica tu anuncio</p>
+            <p>Eventos o webinars</p>
+          </div>
         </div>
+      </div>
     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Leaflet JS (CDN) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Script local de "aboutUs" -->
     <script type="module" src="/src/pages/aboutUs/aboutUs.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
