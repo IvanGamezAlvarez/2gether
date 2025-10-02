@@ -10,32 +10,13 @@
       crossorigin="anonymous"
     />
     <link
-     rel="stylesheet"
-     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-  />
-    <link rel="stylesheet" href="main.css">
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="main.css" />
     <title>Index</title>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg nav-color">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">2gether.com</a>
-          
-
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-</head>
-
-<body>
     <section class="top">
          <img src="/public/img/about-us-two-people-exchanging-skills.png" alt="Fondo" class="bg-img">
         <!-- Columna izquierda -->
@@ -43,7 +24,7 @@
             <h1>Listo para Aprender</h1>
             <p>Una vez más...</p>
         </div>
-        </div>
+        
 
         <!-- Columna derecha -->
         <div class="in-flex">
@@ -79,52 +60,73 @@
             </div>
         </div>
     </section>
-    <script src="./main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-=======
-        </div>
-      </nav>
-    </header>
-    <main>
-      <div>
 
+
+      <!-- Carrusel de imágenes -->
+    <div class="carousel container">
+      <div class="slide active">
+        <div class="row mb-4">
+          <div class="col-3">
+            <div class="image-box">
+              <img
+                src="/public/img/main/guitarra.jpg"
+                alt="Guitarra"
+                class="img-fluid"
+              />
+              <div class="caption">Enseña a tocar guitarra</div>
+            </div>
+          </div>
+          <div class="col-8 offset-1">
+            <div class="image-box">
+              <img
+                src="/public/img/main/programacion.jpg"
+                alt="Programación"
+                class="img-fluid"
+              />
+              <div class="caption">Aprende programación</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-8">
+            <div class="image-box">
+              <img
+                src="/public/img/main/paris.jpg"
+                alt="Francés"
+                class="img-fluid"
+              />
+              <div class="caption">Enseña francés</div>
+            </div>
+          </div>
+          <div class="col-3 offset-1">
+            <div class="image-box">
+              <img
+                src="/public/img/main/piano.jpg"
+                alt="Piano"
+                class="img-fluid"
+              />
+              <div class="caption">Aprende a tocar el piano</div>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <div class="nav-buttons text-center mt-3">
+        <button id="prev" class="btn btn-outline-primary">←</button>
+        <button id="next" class="btn btn-outline-primary">→</button>
+      </div>
+    </div>
 
 
-      <div class="carousel">
-    <div class="slide active">
-      <img src="guitarra.jpg" alt="Enseña a tocar guitarra" />
-      <div class="caption">Enseña a tocar guitarra</div>
-    </div>
-    <div class="slide">
-      <img src="programacion.jpg" alt="Aprende programación" />
-      <div class="caption">Aprende programación</div>
-    </div>
-    <div class="slide">
-      <img src="frances.jpg" alt="Enseña francés" />
-      <div class="caption">Enseña francés</div>
-    </div>
-    <div class="slide">
-      <img src="piano.jpg" alt="Aprende a tocar el piano" />
-      <div class="caption">Aprende a tocar el piano</div>
-    </div>
->>>>>>> 3219f5cdeea935a460a03d248f0ce03a9210f73a
-
-    <div class="nav-buttons">
-      <button id="prev">←</button>
-      <button id="next">→</button>
-    </div>
-  </div>
-
-  <script src="main.js"></script>
-
-    </main>
+    <script src="main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    
 
     <footer></footer>
-    
   </body>
 </html>
