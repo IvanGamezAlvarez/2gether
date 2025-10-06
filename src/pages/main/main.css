@@ -8,9 +8,17 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
+  background: #FFFAEB;
   text-align: center;
 }
+
+section {
+  position: relative; /* muy importante para que la img absoluta solo afecte a este section */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* opcional, evita scroll por la imagen absoluta */
+}
+
 
 .bg-img {
   position: absolute;
@@ -20,10 +28,15 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  filter: brightness(60%);
+
 }
 
+#ready-to-learn{
+  color:#f5f5f5
+}
 
-.top {
+.top, .middle-part{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -39,7 +52,9 @@ body {
   min-width: 450px;
   text-align: center;
 }
-
+#create-account-button{
+  background-color: #FFFAEB;
+}
 #ready-to-learn {
   text-align: center;
   margin: auto;
@@ -88,15 +103,17 @@ i {
 }
 
 .sign-in {
+  height: 40px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: #FFFAEB;
 }
 
 .options {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 15px;
-  gap: 10px;
+  gap: 7px;
 }
 
 .register-text {
@@ -106,7 +123,6 @@ i {
 }
 
 .create-account {
-  display: flex;
   justify-content: center;
 }
 
@@ -202,4 +218,11 @@ i {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+/* siguiente imagen */
+.middle-part{
+  height: 700px;
+  justify-content:center;
+  align-items: center;
+  color: #f5f5f5;
+  margin-top: 50px;
+}
