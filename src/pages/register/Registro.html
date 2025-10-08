@@ -92,14 +92,12 @@
             <div class="card-header text-center bg-transparent border-0">
               <h2 class="card-title">Crea una cuenta</h2>
 
-              <!--Subir foto-->
-
-              <!--Nombre Completo-->
               <form id="registroForm" novalidate>
+                <!--Subir foto-->
                 <div class="avatar-container position-relative d-inline-block">
                   <img
                     class="avatar"
-                    src="/public/img/profileDefault.png"
+                    src="/img/profileDefault.png"
                     alt="Profile pic generic"
                     id="avatarImage"
                   />
@@ -116,9 +114,9 @@
                     id="avatarInput"
                     accept="image/*"
                     style="display: none"
-                    onchange="cambiarAvatar(this)"
                   />
                 </div>
+                <!--Nombre Completo-->
                 <div class="mb-3">
                   <label for="nombre" class="form-label">Nombre Completo</label>
                   <input
