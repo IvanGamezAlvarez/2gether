@@ -32,10 +32,10 @@ export const insertDiv = () => {
           class="navbar-nav d-flex flex-lg-row flex-column align-items-lg-end align-items-start ms-lg-auto ms-0"
         >
           <li class="nav-item">
-            <a href=""><i class="bi bi-chat-fill p-3"></i></a>
+            <a href="/src/pages/chat/chat.html"><i class="bi bi-chat-fill p-3"></i></a>
           </li>
           <li class="nav-item">
-            <a href=""><i class="bi bi-person-fill p-3"></i></a>
+            <a href="/src/pages/profile/profileEditable.html"><i class="bi bi-person-fill p-3"></i></a>
           </li>
         </ul>
       </div>

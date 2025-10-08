@@ -1,36 +1,36 @@
 body {
-  background-color: #fffaeb;
-  font-family: "Montserrat", sans-serif;
+  background-color: #fffaeb !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 /*Barra de navegacion*/
 .navbar-brand {
-  font-family: "Lobster", sans-serif;
+  font-family: "Lobster", sans-serif !important;
 }
 .navbar-brand:hover {
-  color: #ee9b00;
+  color: #ee9b00 !important;
 }
 .navbar-toggler {
-  border: white 1px solid;
+  border: white 1px solid !important;
 }
 .nav-color {
-  background-color: #832d33;
+  background-color: #832d33 !important;
 }
 
 .nav-color a {
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
 }
 .nav-color a:hover {
-  color: #ee9b00;
+  color: #ee9b00 !important;
 }
 
 .navbar-nav i {
-  font-size: 22px;
+  font-size: 22px !important;
 }
 .bi {
   color: white;
   font-size: 30px !important;
 }
 .bi:hover {
-  color: #ee9b00;
+  color: #ee9b00 !important;
 }

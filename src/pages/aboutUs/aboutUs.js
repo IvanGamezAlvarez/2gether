@@ -1,5 +1,4 @@
-import { insertDiv } from "/src/common/navBar/navBar.js";
-import "/src/common/navBar/navBar.css";
+import { addElements } from "/src/common/navElements.js";
 
 // Inicializar el carrusel manualmente
 document.addEventListener("DOMContentLoaded", function () {
@@ -27,6 +26,4 @@ const numberIcon = L.divIcon({
 // Añadir marcador con el número 12 en México (Coordenadas aproximadas de Ciudad de México)
 L.marker([19.4326, -99.1332], { icon: numberIcon }).addTo(map);
 
-document.addEventListener("DOMContentLoaded", () => {
-  insertDiv();
-});
+addElements();

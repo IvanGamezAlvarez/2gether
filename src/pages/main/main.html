@@ -1,130 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-     rel="stylesheet"
-     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-  />
-    <link rel="stylesheet" href="main.css">
-    <title>Index</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg nav-color">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">2gether.com</a>
-          
 
-<<<<<<< HEAD
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="main.css" />
+  <title>Index</title>
 </head>
 
 <body>
-    <section class="top">
-         <img src="/public/img/about-us-two-people-exchanging-skills.png" alt="Fondo" class="bg-img">
-        <!-- Columna izquierda -->
-        <div class="in-flex" id="ready-to-learn">
-            <h1>Listo para Aprender</h1>
-            <p>Una vez más...</p>
-        </div>
-        </div>
+  <section class="top">
+    <img src="/public/img/main/top_photo_guitar.jpg" alt="fondo" class="bg-img">
+    <!-- Columna izquierda -->
+    <div class="in-flex" id="ready-to-learn">
+      <h1>Listo para Aprender</h1>
+      <p>Una vez más...</p>
+    </div>
 
-        <!-- Columna derecha -->
-        <div class="in-flex">
-            <div class="form-registrer">
-                <h2>Iniciar Sesión</h2>
-                <p>Un gusto volverte a ver</p>
-                <form action="/login" method="post">
 
-                    <!--Inputs-->
-                    <input class="controls" type="text" name="email" id="email"
-                        placeholder="Ingresa tu correo electrónico"><br>
-                    <input class="controls" type="password" name="user-password" id="user-password"
-                        placeholder="Ingresa tu contraseña"><br>
-                    <div class="options">
-                        <a href="../login/reset.html">¿Olvidaste tu contraseña?</a>
-                        <label>
-                            <input type="checkbox" name="remember"> Recordar contraseña
-                        </label>
-                    </div><br>
-                    <button class="sign-in" type="submit">Iniciar sesión</button>
-                </form>
-                <div class="logos">
-                    <!--Logos-->
-                    <i class="bi bi-google"></i>
-                    <i class="bi bi-apple"></i>
-                    <i class="bi bi-github"></i>
+    <!-- Columna derecha -->
+    <div class="in-flex">
+      <div class="form-registrer">
+        <h2>Iniciar Sesión</h2>
+        <p>Un gusto volverte a ver</p>
 
-                </div>
-                <span class="register-text">¿No tienes una cuenta?</span><br>
-                <div class="create-account">
-                    <button onclick="window.location.href='../login/login.html'">Crear cuenta</button>
-                </div>
-            </div>
+        <form id="formulario">
+          <div class="formulario-grupo" id="grupo-email">
+            <input class="formulario-input input" type="text" name="email" id="email"
+              placeholder="Ingresa tu correo electrónico">
+            <p class="formulario-input-error">Por favor, ingresa un correo electrónico válido.</p>
+          </div>
+          <div class="formulario-grupo" id="grupo-password">
+            <input class="formulario-input input" type="password" name="password" id="password"
+            placeholder="Ingresa tu contraseña">
+            <p class="formulario-input-error">La contraseña debe tener al menos 8 caracteres.</p>
+          </div>
+          <div class="options">
+            <a href="../login/reset.html">¿Olvidaste tu contraseña?</a>
+            <label>
+              <input id="recordar-contrasena" type="checkbox" name="remember"> Recordar contraseña
+            </label>
+          </div><br>
+          <button class="sign-in" id="sign-in" type="submit">Iniciar sesión</button>
+        </form>
+        <div class="logos">
+          <!--Logos-->
+          <i class="bi bi-google"></i>
+          <i class="bi bi-apple"></i>
+          <i class="bi bi-github"></i>
+
         </div>
-    </section>
-    <script src="./main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-=======
+        <span class="register-text">¿No tienes una cuenta?</span><br>
+        <div class="create-account">
+          <button id="create-account-button" onclick="window.location.href='/src/pages/register/Registro.html'">Crear
+            cuenta</button>
         </div>
-      </nav>
-    </header>
-    <main>
-      <div>
+      </div>
+    </div>
+  </section>
 
+
+  <!-- Carrusel de imágenes -->
+  <div class="carousel container">
+    <div class="slide active">
+      <div class="row mb-4">
+        <div class="col-3">
+          <div class="image-box">
+            <img src="/public/img/main/guitarra.jpg" alt="Guitarra" class="img-fluid" />
+            <div class="caption">Enseña a tocar guitarra</div>
+          </div>
+        </div>
+        <div class="col-8 offset-1">
+          <div class="image-box">
+            <img src="/public/img/main/programacion.jpg" alt="Programación" class="img-fluid" />
+            <div class="caption">Aprende programación</div>
+          </div>
+        </div>
       </div>
 
+      <div class="row">
+        <div class="col-8">
+          <div class="image-box">
+            <img src="/public/img/main/paris.jpg" alt="Francés" class="img-fluid" />
+            <div class="caption">Enseña francés</div>
+          </div>
+        </div>
+        <div class="col-3 offset-1">
+          <div class="image-box">
+            <img src="/public/img/main/piano.jpg" alt="Piano" class="img-fluid" />
+            <div class="caption">Aprende a tocar el piano</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-      <div class="carousel">
-    <div class="slide active">
-      <img src="guitarra.jpg" alt="Enseña a tocar guitarra" />
-      <div class="caption">Enseña a tocar guitarra</div>
-    </div>
-    <div class="slide">
-      <img src="programacion.jpg" alt="Aprende programación" />
-      <div class="caption">Aprende programación</div>
-    </div>
-    <div class="slide">
-      <img src="frances.jpg" alt="Enseña francés" />
-      <div class="caption">Enseña francés</div>
-    </div>
-    <div class="slide">
-      <img src="piano.jpg" alt="Aprende a tocar el piano" />
-      <div class="caption">Aprende a tocar el piano</div>
-    </div>
->>>>>>> 3219f5cdeea935a460a03d248f0ce03a9210f73a
-
-    <div class="nav-buttons">
-      <button id="prev">←</button>
-      <button id="next">→</button>
+    <div class="nav-buttons text-center mt-3">
+      <button id="prev" class="btn btn-outline-primary">←</button>
+      <button id="next" class="btn btn-outline-primary">→</button>
     </div>
   </div>
 
+  <!-- Siguiente seccion-->
+  <section class="middle-part">
+    <img src="/public/img/main/teaching_piano.jpg" alt="fondo" class="bg-img">
+    <div>
+      <h3>La mejor forma de aprender es enseñando</h3>
+      <p>Forma parte de la mejor comunidad de aprendizaje<br>bidireccional multidisciplinaria</p>
+  </section>
+
+
+
+
+
   <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
-    </main>
 
-    <footer></footer>
-    
-  </body>
+  <footer></footer>
+</body>
+
 </html>
