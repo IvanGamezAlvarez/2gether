@@ -82,7 +82,7 @@ section {
   text-align: center;
 }
 
-.controls {
+.formulario-input {
   width: 100%;
   padding: 10px;
   margin: 5px;
@@ -100,6 +100,12 @@ section {
 
 i {
   font-size: 30px;
+}
+#create-account-button:hover{
+  box-shadow: 5px 0px 30px rgba(255, 255, 255, 0.3);
+}
+.sign-in:hover{
+  box-shadow: 5px 0px 30px rgba(255, 255, 255, 0.3);
 }
 
 .sign-in {
@@ -119,7 +125,7 @@ i {
 .register-text {
   display: block;
   text-align: center;
-  margin: 5px auto;
+  margin: 0px auto;
 }
 
 .create-account {
@@ -133,7 +139,23 @@ i {
   width: 50%;
   max-width: 800px;
 }
+.formulario-input-error{
+  font-size: 12px;
+  margin-bottom: 0;
+  display: none;
+  color: rgb(141, 135, 135);
+}
+.formulario-input-error-activo{
+  display: block;
+}
 
+
+.formulario-grupo-correcto .formulario-input{
+  border: 3px solid #1ed12d;;
+}
+.formulario-grupo-incorrecto .formulario-input{
+  border: 3px solid #bb2929;
+}
 /* Carrusel */
 .carousel {
   max-width: 900px;
@@ -220,3 +242,6 @@ i {
   color: #f5f5f5;
   margin-top: 50px;
 }
+
+
+
