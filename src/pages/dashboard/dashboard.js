@@ -1,3 +1,4 @@
+import { addElements } from "/src/common/navElements.js";
 import { fetchSuggestions, fetchIdealExchanges, fetchHelpOpportunities } from './api.js';
 
 function getLevelIcons(level) {
@@ -116,3 +117,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error al cargar los datos del dashboard:", error);
   }
 });
+
+addElements();
