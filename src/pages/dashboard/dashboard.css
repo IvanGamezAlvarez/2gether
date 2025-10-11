@@ -107,15 +107,21 @@ body {
   color: #fff;
   border-radius: 8px;
   padding: 0.2rem 0.5rem;
-  font-size: 0.8rem; 
+  font-size: 0.8rem;
 }
 
 .btn-custom:hover {
-  background-color: #00404d;
-  border-color: #00404d;
+  background-color: #004d5a;
+  border-color: #004d5a;
   color: #fff;
 }
 
+.btn.btn-custom:active {
+  background-color: #003640;
+  border-color: #003640;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  color: #fff;
+}
 
 .skill-item {
   display: flex;

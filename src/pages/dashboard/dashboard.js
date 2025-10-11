@@ -58,7 +58,7 @@ function createCardHTML(user) {
                   <h6 class="fw-bold mb-1">${user.username}</h6>
                   <p class="card-text text-muted mb-0 text-xs">${user.description}</p>
                 </div>
-                <a href="#" class="btn btn-custom px-3 text-nowrap ms-3">Ver perfil</a>
+                <a href="#" class="btn btn-custom fw-semibold px-3 text-nowrap ms-3">Ver perfil</a>
               </div>
               
               <div class="mt-3">
