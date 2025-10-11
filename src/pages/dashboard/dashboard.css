@@ -70,6 +70,7 @@ body {
 
 .text-xs {
   font-size: 0.7rem;
+  line-height: 1.4;
 }
 
 .card-text {
@@ -78,6 +79,14 @@ body {
   overflow: hidden;
   -webkit-line-clamp: 3;
   text-overflow: ellipsis;
+  min-height: 4.2em;
+}
+
+.skill-section-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
 }
 
 .skills-offer {
@@ -105,4 +114,28 @@ body {
   background-color: #00404d;
   border-color: #00404d;
   color: #fff;
+}
+
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.level-icons .bi {
+  font-size: 0.7rem;
+  margin: 0 0.2px;
+}
+
+.level-beginner .bi-lightning-charge-fill {
+  color: #78cff1;
+}
+
+.level-intermediate .bi-lightning-charge-fill {
+  color: #f8dc88;
+  }
+
+.level-expert .bi-lightning-charge-fill {
+  color: #eb6e72;
 }

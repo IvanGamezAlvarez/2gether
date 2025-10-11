@@ -1,8 +1,42 @@
 import { fetchSuggestions, fetchIdealExchanges, fetchHelpOpportunities } from './api.js';
 
+function getLevelIcons(level) {
+  const totalIcons = 3;
+  let filledIcons = 0;
+  let levelClass = '';
+  
+  switch (level.toLowerCase()) {
+      case 'principiante': 
+        filledIcons = 1;
+        levelClass = 'level-beginner';
+        break;
+      case 'intermedio': 
+        filledIcons = 2;
+        levelClass = 'level-intermediate';
+        break;
+      case 'experto':
+        filledIcons = 3;
+        levelClass = 'level-expert';
+        break;
+  }
+  
+  let html = `<div class="level-icons mt-0 ${levelClass}">`;
+  for (let i = 0; i < filledIcons; i++) {
+      html += '<i class="bi bi-lightning-charge-fill"></i>';
+  }
+  for (let i = 0; i < totalIcons - filledIcons; i++) {
+      html += '<i class="bi bi-lightning-charge-fill text-secondary text-opacity-25"></i>';
+  }
+  html += '</div>';
+  return html;
+}
+
 function createCardHTML(user) {
   const offerBadges = user.skillsOffer.map(skill => 
-     `<span class="badge skills-offer fw-semibold me-1">${skill.name}</span>`
+     `<div class="skill-item">
+        <span class="badge skills-offer">${skill.name}</span>
+        ${getLevelIcons(skill.level)} 
+      </div>`
   ).join('');
 
   const seekBadges = user.skillsSeek.map(skill => 
@@ -24,18 +58,18 @@ function createCardHTML(user) {
                   <h6 class="fw-bold mb-1">${user.username}</h6>
                   <p class="card-text text-muted mb-0 text-xs">${user.description}</p>
                 </div>
-                <a href="" class="btn btn-custom px-3 text-nowrap ms-3">Ver perfil</a>
+                <a href="#" class="btn btn-custom px-3 text-nowrap ms-3">Ver perfil</a>
               </div>
               
               <div class="mt-3">
                 <div class="row">
-                  <div class="col-12 col-sm-6 mb-2 mb-sm-0">
-                    <h6 class="small text-muted mb-1">Enseña</h6>
-                    ${offerBadges}
+                  <div class="col-6 mb-2 mb-sm-0">
+                    <h6 class="skill-section-title mb-2">Enseña</h6>
+                    <div class="d-flex flex-wrap gap-1">${offerBadges}</div>
                   </div>
-                  <div class="col-12 col-sm-6">
-                    <h6 class="small text-muted mb-1">Busca aprender</h6>
-                    ${seekBadges}
+                  <div class="col-6">
+                    <h6 class="skill-section-title mb-2">Busca aprender</h6>
+                    <div class="d-flex flex-wrap gap-1">${seekBadges}</div>
                   </div>
                 </div>
               </div>
