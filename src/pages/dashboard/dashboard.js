@@ -14,10 +14,10 @@ function createCardHTML(user) {
       <div class="card shadow-sm border-0 rounded-4 h-100">
         <div class="card-body p-3 d-flex flex-column">
           <div class="d-flex align-items-start">
-            <img src="${user.imageUrl}" 
-                 alt="Foto de perfil de ${user.username}" 
-                 class="profile-photo rounded-circle">
-            
+            <div class="profile-photo-container">
+              <img src="${user.imageUrl}" 
+                alt="Foto de perfil de ${user.username}">
+            </div>
             <div class="ms-3 flex-grow-1">
               <div class="d-flex justify-content-between align-items-start">
                 <div>
