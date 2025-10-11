@@ -1,81 +1,8 @@
-const usersData = [
-  {
-    id: 1,
-    username: "Carlos Sánchez",
-    description: "Desarrolladora Full-Stack con pasión por el diseño UX/UI. Amante del café y el código limpio.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["Java", "SQL"],
-    skillsSeek: ["React"]
-  },
-  {
-    id: 2,
-    username: "Carlos Sánchez",
-    description: "Especialista en bases de datos y backend. Me encanta optimizar queries y la arquitectura de sistemas.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["PostgreSQL"],
-    skillsSeek: ["Go", "Docker"]
-  },
-  {
-    id: 3,
-    username: "Ana Gómez",
-    description: "Frontend Developer enfocada en crear interfaces accesibles y performantes para todos los usuarios.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["HTML5", "CSS"],
-    skillsSeek: ["Testing"]
-  },
-  {
-    id: 4,
-    username: "Ana Gómez",
-    description: "Frontend Developer enfocada en crear interfaces accesibles y performantes para todos los usuarios.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["CSS", "Vue.js"],
-    skillsSeek: ["TypeScript"]
-  },
-    {
-    id: 5,
-    username: "Ana Gómez",
-    description: "Desarrolladora Full-Stack con pasión por el diseño UX/UI. Amante del café y el código limpio.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["Java", "SQL"],
-    skillsSeek: ["React"]
-  },
-  {
-    id: 6,
-    username: "Carlos Sánchez",
-    description: "Especialista en bases de datos y backend. Me encanta optimizar queries y la arquitectura de sistemas.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["PostgreSQL"],
-    skillsSeek: ["Go", "Docker"]
-  },
-  {
-    id: 7,
-    username: "Ana Gómez",
-    description: "Frontend Developer enfocada en crear interfaces accesibles y performantes para todos los usuarios.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["HTML5", "CSS"],
-    skillsSeek: ["Testing"]
-  },
-  {
-    id: 8,
-    username: "Ana Gómez",
-    description: "Frontend Developer enfocada en crear interfaces accesibles y performantes para todos los usuarios.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["CSS", "Vue.js"],
-    skillsSeek: ["TypeScript"]
-  },
-  {
-    id: 9,
-    username: "Ana Gómez",
-    description: "Frontend Developer enfocada en crear interfaces accesibles y performantes para todos los usuarios.",
-    imageUrl: "https://i.pravatar.cc/150?u=ana",
-    skillsOffer: ["CSS", "Vue.js"],
-    skillsSeek: ["TypeScript"]
-  },
-];
+import { fetchSuggestions, fetchIdealExchanges, fetchHelpOpportunities } from './api.js';
 
 function createCardHTML(user) {
   const offerBadges = user.skillsOffer.map(skill => 
-    `<span class="badge skills-offer fw-semibold me-1">${skill}</span>`
+     `<span class="badge skills-offer fw-semibold me-1">${skill.name}</span>`
   ).join('');
 
   const seekBadges = user.skillsSeek.map(skill => 
@@ -121,9 +48,13 @@ function createCardHTML(user) {
 }
 
 function renderCards(users, containerId) {
+  const container = document.getElementById(containerId);
+  if (!users || users.length === 0) {
+    container.innerHTML = `<div class="col-12"><p class="text-center text-muted">No se encontraron resultados.</p></div>`;
+    return;
+  }
 
   const fragment = document.createDocumentFragment();
-  const container = document.getElementById(containerId);
 
   users.forEach(user => {
     const cardWrapper = document.createElement('div');
@@ -136,10 +67,18 @@ function renderCards(users, containerId) {
   container.appendChild(fragment);
 }
 
-const matches = usersData.slice(0, 3);
-const suggestions = usersData.slice(3, 9);
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const [idealMatches, suggestions, helpOpportunities] = await Promise.all([
+      fetchIdealExchanges(),
+      fetchSuggestions(),
+      fetchHelpOpportunities()
+    ]);
 
-renderCards(usersData, 'cards-matches');
-renderCards(matches, 'cards-suggestions');
-renderCards(suggestions, 'cards-help');
-
+    renderCards(idealMatches, 'cards-matches');
+    renderCards(suggestions, 'cards-suggestions');
+    renderCards(helpOpportunities, 'cards-help');
+  } catch (error) {
+    console.error("Error al cargar los datos del dashboard:", error);
+  }
+});
