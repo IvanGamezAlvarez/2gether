@@ -97,9 +97,25 @@ const usersData = [
   }
 ];
 
+const availableSkills = [
+    "Java", "SQL", "AWS", "React", "Go", "Docker", "HTML", "CSS", "Inglés",
+    "Testing", "Vue.js", "TypeScript", "Spring Boot", "PostgreSQL", "Figma",
+    "Guitarra", "Scrum", "Node.js"
+];
 
 /**
- * Simulates fetching profiles for the "Intercambios Ideale" module.
+ * Simulates fetching the list of all available skills.
+ */
+export function fetchAllSkills() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(availableSkills.sort());
+        }, 300);
+    });
+}
+
+/**
+ * Simulates fetching profiles for the "Intercambios Ideales" module.
  */
 export function fetchIdealExchanges() {
     return new Promise(resolve => setTimeout(() => resolve(usersData.slice(0, 6)), 500));

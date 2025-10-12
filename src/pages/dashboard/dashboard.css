@@ -3,10 +3,14 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+main {
+  min-height: 800px
+}
+
 .custom-search-bar {
   background-color: #fff0d4;
   border-radius: 25px;
-  padding: 5px;
+  padding: 0.5px;
 }
 
 .custom-search-bar .form-control {
@@ -20,7 +24,7 @@ body {
 
 .custom-search-bar .input-group-text i {
   color: #c98300;
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 
 .badge-skill-filter {
@@ -144,4 +148,33 @@ body {
 
 .level-expert .bi-lightning-charge-fill {
   color: #eb6e72;
+}
+
+.skills-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 200px;
+    overflow-y: auto;
+    max-height: 200px;
+    padding: 0.25rem 0;
+}
+
+.suggestion-item {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.suggestion-item:hover {
+  background-color: #f8f8f8;
+}
+
+.suggestion-item.active {
+  background-color: #e9ecef;
+  color: #000;
 }

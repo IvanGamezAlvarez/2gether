@@ -1,5 +1,6 @@
 import { addElements } from "/src/common/navElements.js";
 import { fetchSuggestions, fetchIdealExchanges, fetchHelpOpportunities } from './api.js';
+import { initSkillsFilter } from './skillsFilter.js';
 
 function getLevelIcons(level) {
   const totalIcons = 3;
@@ -88,13 +89,11 @@ function renderCards(users, containerId) {
     container.innerHTML = `<div class="col-12"><p class="text-center text-muted">No se encontraron resultados.</p></div>`;
     return;
   }
-
+  
   const fragment = document.createDocumentFragment();
-
   users.forEach(user => {
     const cardWrapper = document.createElement('div');
     cardWrapper.innerHTML = createCardHTML(user);
-    
     fragment.appendChild(cardWrapper.firstElementChild);
   });
 
@@ -103,6 +102,9 @@ function renderCards(users, containerId) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const searchBarContainer = document.querySelector('.custom-search-bar').parentElement;
+  const badgesContainer = document.getElementById('badges-container');
+
   try {
     const [idealMatches, suggestions, helpOpportunities] = await Promise.all([
       fetchIdealExchanges(),
@@ -113,9 +115,54 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderCards(idealMatches, 'cards-matches');
     renderCards(suggestions, 'cards-suggestions');
     renderCards(helpOpportunities, 'cards-help');
+
+    // Función que manejará la lógica de filtrado
+    const handleFilterChange = (selectedSkills) => {
+      const filterUsers = (users) => {
+        if (selectedSkills.length === 0) {
+          return users; // Sin filtros, devuelve todos los usuarios
+        }
+        return users.filter(user =>
+          selectedSkills.every(skill =>
+            user.skillsOffer.some(s => s.name === skill)
+          )
+        );
+      };
+
+      // Aplica el filtro a los datos de las dos primeras pestañas
+      const filteredMatches = filterUsers(idealMatches);
+      const filteredSuggestions = filterUsers(suggestions);
+      
+      // Re-renderiza las tarjetas con los datos filtrados
+      renderCards(filteredMatches, 'cards-matches');
+      renderCards(filteredSuggestions, 'cards-suggestions');
+    };
+
+    // Inicializa el buscador
+    initSkillsFilter('.custom-search-bar input', 'badges-container', handleFilterChange);
+
+    // Añade listeners a las pestañas para controlar la visibilidad del buscador
+    const tabs = document.querySelectorAll('.nav-link[data-bs-toggle="tab"]');
+    tabs.forEach(tab => {
+      tab.addEventListener('shown.bs.tab', (event) => {
+        const activeTabId = event.target.getAttribute('href');
+        
+        if (activeTabId === '#help') {
+          // Si es la pestaña "Puedo Ayudar a...", ocultamos todo
+          searchBarContainer.style.display = 'none';
+          badgesContainer.style.display = 'none';
+        } else {
+          // Para las otras dos, se deja visible
+          searchBarContainer.style.display = 'block';
+          badgesContainer.style.display = 'block';
+        }
+      });
+    });
+
   } catch (error) {
     console.error("Error al cargar los datos del dashboard:", error);
   }
 });
 
 addElements();
+export { renderCards, createCardHTML };
