@@ -1,0 +1,180 @@
+body {
+  background-color: #fffaeb;
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  min-height: 800px
+}
+
+.custom-search-bar {
+  background-color: #fff0d4;
+  border-radius: 25px;
+  padding: 0.5px;
+}
+
+.custom-search-bar .form-control {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.custom-search-bar .form-control::placeholder {
+  color: #c98300;
+}
+
+.custom-search-bar .input-group-text i {
+  color: #c98300;
+  font-size: 1.2rem !important;
+}
+
+.badge-skill-filter {
+  background-color: #BB3E03;
+  color: #fff;
+}
+
+.badge-skill-filter .btn-close {
+  width: 0.5rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+  vertical-align: middle; 
+}
+
+.nav-underline .nav-link {
+  color: #005F73;
+  font-weight: 500;
+}
+
+.nav-underline .nav-link.active {
+  color: #003c54;
+  border-bottom: 2px solid #003c54;
+}
+
+.nav-underline .nav-link:hover {
+  color: #005464;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.profile-photo-container {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.text-xs {
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  min-height: 4.2em;
+}
+
+.skill-section-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+.skills-offer {
+  background-color: #EE9B00;
+  font-size: 0.6rem;
+  padding: 0.6em 0.9em;
+}
+
+.skills-seek {
+  background-color: #29A192;
+  font-size: 0.6rem;
+  padding: 0.6em 0.9em;
+}
+
+.btn-custom {
+  background-color: #005F73;
+  border-color: #005F73;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.btn-custom:hover {
+  background-color: #004d5a;
+  border-color: #004d5a;
+  color: #fff;
+}
+
+.btn.btn-custom:active {
+  background-color: #003640;
+  border-color: #003640;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  color: #fff;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.level-icons .bi {
+  font-size: 0.7rem !important;
+  margin: 0 0.2px;
+}
+
+.level-beginner .bi-lightning-charge-fill {
+  color: #78cff1;
+}
+
+.level-intermediate .bi-lightning-charge-fill {
+  color: #afd40b;
+  }
+
+.level-expert .bi-lightning-charge-fill {
+  color: #eb6e72;
+}
+
+.skills-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 200px;
+    overflow-y: auto;
+    max-height: 200px;
+    padding: 0.25rem 0;
+}
+
+.suggestion-item {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.suggestion-item:hover {
+  background-color: #f8f8f8;
+}
+
+.suggestion-item.active {
+  background-color: #e9ecef;
+  color: #000;
+}
