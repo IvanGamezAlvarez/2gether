@@ -12,6 +12,7 @@ export default defineConfig({
         card: resolve(__dirname, "src/pages/card/card.html"),
         register: resolve(__dirname, "src/pages/register/Registro.html"),
         chat: resolve(__dirname, "src/pages/chat/chat.html"),
+        profileEditable: resolve(__dirname, "src/pages/profile/profileEditable.html"),
       },
     },
   },
