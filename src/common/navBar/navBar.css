@@ -34,3 +34,7 @@ body {
 .bi:hover {
   color: #ee9b00 !important;
 }
+.flex-column {
+  /* display: flex;
+  justify-content: space-around; */
+}
