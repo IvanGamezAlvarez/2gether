@@ -1,8 +1,26 @@
 .footer-main {
   background-color: #832d33;
+  font-family: "Montserrat", sans-serif;
 }
 footer a {
   display: block;
   text-decoration: none;
   color: white;
+}
+.row {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+h5 {
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+}
+.footer-title {
+  font-size: 2.5rem;
+  font-family: "Lobster", sans-serif !important;
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
 }
