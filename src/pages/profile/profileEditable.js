@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (avatarGuardado) {
     document.getElementById("avatarImage").src = avatarGuardado;
   }
-
 });
 // Función para editar el nombre de usuario
 function editarUsername() {
@@ -389,8 +388,6 @@ function eliminarHabilidad(boton) {
 }
 // Inicializar tooltips para las medallas
 document.addEventListener("DOMContentLoaded", function () {
-
-
   // Inicializar tooltips de Bootstrap
   const tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')

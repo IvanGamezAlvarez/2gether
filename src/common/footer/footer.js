@@ -2,6 +2,7 @@ export const insertDivFooter = () => {
   const footBar = document.querySelector("#foot-bar");
   if (footBar) {
     const footDiv = document.createElement("div");
+    footDiv.classList.add("custom-footer");
     footDiv.innerHTML = ` <div class="footer-main text-light py-5">
       <div class="container">
         <div class="row">
