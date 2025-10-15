@@ -7,7 +7,7 @@ function cambiarBanner(input) {
 
     reader.onload = function (e) {
       document.getElementById("bannerImage").src = e.target.result;
-      // Aquí puedes guardar la imagen en tu base de datos o localStorage
+      // Guardar la imagen en base de datos o localStorage
       localStorage.setItem("bannerPersonalizado", e.target.result);
     };
 
@@ -42,8 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (avatarGuardado) {
     document.getElementById("avatarImage").src = avatarGuardado;
   }
-
-  // ... el resto de tu código de inicialización
 });
 // Función para editar el nombre de usuario
 function editarUsername() {
@@ -390,8 +388,6 @@ function eliminarHabilidad(boton) {
 }
 // Inicializar tooltips para las medallas
 document.addEventListener("DOMContentLoaded", function () {
-  // ... tu código existente ...
-
   // Inicializar tooltips de Bootstrap
   const tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')

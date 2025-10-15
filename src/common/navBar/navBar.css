@@ -1,36 +1,54 @@
-body {
+/* Aislar todo con el prefijo .custom-navbar */
+.custom-navbar nav {
   background-color: #fffaeb !important;
   font-family: "Montserrat", sans-serif !important;
 }
-/*Barra de navegacion*/
-.navbar-brand {
+
+/* Marca */
+.custom-navbar .navbar-brand {
   font-family: "Lobster", sans-serif !important;
 }
-.navbar-brand:hover {
+
+.custom-navbar .navbar-brand:hover {
   color: #ee9b00 !important;
 }
-.navbar-toggler {
+
+/* Botón hamburguesa */
+.custom-navbar .navbar-toggler {
   border: white 1px solid !important;
 }
-.nav-color {
+
+/* Fondo de color personalizado */
+.custom-navbar .nav-color {
   background-color: #832d33 !important;
 }
 
-.nav-color a {
+/* Enlaces */
+.custom-navbar .nav-color a {
   color: white !important;
   text-decoration: none !important;
 }
-.nav-color a:hover {
+
+.custom-navbar .nav-color a:hover {
   color: #ee9b00 !important;
 }
 
-.navbar-nav i {
+/* Íconos */
+.custom-navbar .navbar-nav i {
   font-size: 22px !important;
 }
-.bi {
+
+.custom-navbar .bi {
   color: white;
   font-size: 30px !important;
 }
-.bi:hover {
+
+.custom-navbar .bi:hover {
   color: #ee9b00 !important;
+}
+
+/* Ajustes para columnas (opcional) */
+.custom-navbar .flex-column {
+  /* display: flex;
+  justify-content: space-around; */
 }

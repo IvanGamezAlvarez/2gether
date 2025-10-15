@@ -2,9 +2,10 @@ export const insertDiv = () => {
   const navBar = document.querySelector("#navbar");
   if (navBar) {
     const navDiv = document.createElement("div");
+    navDiv.classList.add("custom-navbar");
     navDiv.innerHTML = ` <nav class="navbar navbar-expand-lg nav-color">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html">2gether.com</a>
+      <a class="navbar-brand" href="/src/pages/dashboard/dashboard.html">2gether.com</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -18,18 +19,9 @@ export const insertDiv = () => {
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/src/pages/aboutUs/aboutus.html"
-              >Sobre nosotros</a
-            >
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="/src/pages/card/card.html">Tarjetas</a>
-          </li>
-        </ul>
+
         <ul
-          class="navbar-nav d-flex flex-lg-row flex-column align-items-lg-end align-items-start ms-lg-auto ms-0"
+          class="navbar-nav d-flex flex-lg-row flex-column  ms-lg-auto ms-0"
         >
           <li class="nav-item">
             <a href="/src/pages/chat/chat.html"><i class="bi bi-chat-fill p-3"></i></a>
