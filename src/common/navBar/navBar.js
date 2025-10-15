@@ -2,6 +2,7 @@ export const insertDiv = () => {
   const navBar = document.querySelector("#navbar");
   if (navBar) {
     const navDiv = document.createElement("div");
+    navDiv.classList.add("custom-navbar");
     navDiv.innerHTML = ` <nav class="navbar navbar-expand-lg nav-color">
     <div class="container-fluid">
       <a class="navbar-brand" href="/src/pages/dashboard/dashboard.html">2gether.com</a>

@@ -5,45 +5,56 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  background: #FFFAEB;
+  background: #fffaeb;
   text-align: center;
+}
+.navbar {
+  position: absolute;
+}
+.navbar a {
+  font-family: "Lobster", sans-serif;
+  color: white;
+  font-size: 1.3rem;
+}
+h1 {
+  font-family: "Lobster", sans-serif;
+  font-size: 3rem;
 }
 
 section {
   position: relative; /* muy importante para que la img absoluta solo afecte a este section */
   width: 100%;
-  height: 100vh;
+  height: 10rem;
   overflow: hidden; /* opcional, evita scroll por la imagen absoluta */
 }
-
 
 .bg-img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(60%);
-
+  filter: brightness(40%);
 }
 
-#ready-to-learn{
-  color:#f5f5f5
+#ready-to-learn {
+  color: #f5f5f5;
 }
 
-.top, .middle-part{
+.top,
+.middle-part {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   height: auto; /* ← Esto permite que crezca según el contenido */
   margin-bottom: 60px;
   position: relative; /* ← Necesario para que .bg-img se posicione correctamente */
-  padding: 40px 0;     /* Opcional: agrega espacio vertical interno */
+  padding: 40px 0; /* Opcional: agrega espacio vertical interno */
 }
 
 .in-flex {
@@ -52,8 +63,11 @@ section {
   min-width: 450px;
   text-align: center;
 }
-#create-account-button{
-  background-color: #FFFAEB;
+.in-flex p {
+  font-size: 1.3rem;
+}
+#create-account-button {
+  background-color: #fffaeb;
 }
 #ready-to-learn {
   text-align: center;
@@ -71,6 +85,7 @@ section {
 }
 
 .form-registrer h2 {
+  font-weight: 600;
   font-size: 32px;
   margin-bottom: 10px;
   text-align: center;
@@ -101,10 +116,10 @@ section {
 i {
   font-size: 30px;
 }
-#create-account-button:hover{
+#create-account-button:hover {
   box-shadow: 5px 0px 30px rgba(255, 255, 255, 0.3);
 }
-.sign-in:hover{
+.sign-in:hover {
   box-shadow: 5px 0px 30px rgba(255, 255, 255, 0.3);
 }
 
@@ -112,7 +127,7 @@ i {
   height: 40px;
   width: 100%;
   border-radius: 10px;
-  background-color: #FFFAEB;
+  background-color: #fffaeb;
 }
 
 .options {
@@ -139,28 +154,27 @@ i {
   width: 50%;
   max-width: 800px;
 }
-.formulario-input-error{
+.formulario-input-error {
   font-size: 12px;
   margin-bottom: 0;
   display: none;
   color: rgb(141, 135, 135);
 }
-.formulario-input-error-activo{
+.formulario-input-error-activo {
   display: block;
 }
 
-
-.formulario-grupo-correcto .formulario-input{
-  border: 3px solid #1ed12d;;
+.formulario-grupo-correcto .formulario-input {
+  border: 3px solid #1ed12d;
 }
-.formulario-grupo-incorrecto .formulario-input{
+.formulario-grupo-incorrecto .formulario-input {
   border: 3px solid #bb2929;
 }
 /* Carrusel */
 .carousel {
   max-width: 900px;
   margin: 0 auto;
-    position: relative;
+  position: relative;
   overflow: visible;
   padding-top: 40px;
 }
@@ -211,11 +225,11 @@ i {
   font-size: 2rem;
 }
 .btn-nav {
-   background-color: transparent; 
-  border: none;                 
-  color: #AE2012;                
-  padding: 0;                    
-  font-size: 2rem;             
+  background-color: transparent;
+  border: none;
+  color: #ae2012;
+  padding: 0;
+  font-size: 2rem;
   cursor: pointer;
   transition: color 0.3s ease;
   pointer-events: auto;
@@ -223,18 +237,14 @@ i {
 }
 
 .btn-nav i {
-  font-size: 5rem; 
+  font-size: 5rem;
 }
 
-
 /* siguiente imagen */
-.middle-part{
+.middle-part {
   height: 700px;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   color: #f5f5f5;
   margin-top: 50px;
 }
-
-
-

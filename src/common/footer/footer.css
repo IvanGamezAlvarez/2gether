@@ -1,26 +1,43 @@
-.footer-main {
+.custom-footer .footer-main {
   background-color: #832d33;
   font-family: "Montserrat", sans-serif;
 }
-footer a {
+
+/* Enlaces del footer */
+.custom-footer a {
   display: block;
   text-decoration: none;
   color: white;
+  transition: color 0.3s ease;
 }
-.row {
+
+.custom-footer a:hover {
+  color: #ee9b00;
+}
+
+/* Layout del footer */
+.custom-footer .row {
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-h5 {
+
+/* Título y subtítulo */
+.custom-footer h5 {
   font-size: 1.5rem;
   display: block;
   width: 100%;
 }
-.footer-title {
+
+.custom-footer .footer-title {
   font-size: 2.5rem;
   font-family: "Lobster", sans-serif !important;
   text-align: center;
   margin-top: 2.5rem;
   margin-bottom: 3rem;
+}
+
+/* Ajuste opcional para las listas */
+.custom-footer .foot-list a {
+  margin-bottom: 0.5rem;
 }
