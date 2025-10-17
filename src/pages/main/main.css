@@ -191,6 +191,7 @@ i {
   height: 250px;
   overflow: hidden;
   border-radius: 8px;
+  
 }
 
 .image-box img {
@@ -198,6 +199,7 @@ i {
   height: 100%;
   object-fit: cover;
   display: block;
+  margin-bottom: -45px;
 }
 
 .caption {
@@ -250,31 +252,87 @@ i {
 }
 
 /* Sistema de recompensas */
-.badge-system {
-  margin: 0;
-  padding: 0;
-}
 
 .badge-box {
-  background-color: #014F63;
-
+background-color: #014F63;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: 25px;
+  padding-top: 40px;
+  position: relative;
+  z-index: 0;
+}
+
+.badge-box .row { 
+  gap: 90px;
+}
+
+.flecha-izquierda {
+  position: absolute;
+  transform: translateY(-65%);
+  width: 350px;
+  left: -12px;
+}
+
+.flecha-deco {
+  position: absolute;
+  transform: translateY(-50%);
+  width: 500px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
 }
 
 .badge-title {
   color: white;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .badge-description {
   color: white;
   font-size: 1.1rem;
-  max-width: 800px;
+  max-width: 560px;
   line-height: 1.6;
+  margin-bottom: 45px;
 }
+/*Imagenes de rencompensas*/
+.row .col img {
+  width: 160px;
+  height: 160px;
+}
+
+.col.raise {
+ margin-top: -40px;
+}
+
+.col.raise-down {
+  margin-top: 15px;
+}
+
+.col img {
+
+ width: 160px;
+  height: auto;
+}
+
+.raise p,
+.raise-down p {
+  color: white;
+  font-size: 1rem;
+}
+
+.raise h3,
+.raise-down h3 {
+  color: white;
+  font-size: 1.25rem;
+}
+
+
+
+
+
