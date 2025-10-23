@@ -101,23 +101,61 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-formulario.addEventListener("submit", (e) => {
+formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
+  const loginAdvise = document.querySelector("#login-advise");
+
+  // Limpia mensajes anteriores
+  loginAdvise.textContent = "";
+  loginAdvise.classList.remove(
+    "formulario-input-error-activo",
+    "formulario-grupo-correcto"
+  );
 
   if (campos.email && campos.password) {
-    // Guardar en localStorage
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
 
-    formulario.reset();
-    alert("Ingresaste correctamente");
+    try {
+      const response = await fetch("https://tu-api.com/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    document.querySelectorAll(".formulario-grupo-correcto").forEach((icono) => {
-      icono.classList.remove("formulario-grupo-correcto");
-    });
+      if (!response.ok) {
+        throw new Error("Error en el servidor o credenciales inválidas");
+      }
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Guardamos la información del usuario
+        localStorage.setItem("userData", JSON.stringify(data.user));
+        localStorage.setItem("token", data.token);
+
+        // Mostrar mensaje de éxito
+        loginAdvise.textContent = "Inicio de sesión exitoso ✅";
+        loginAdvise.classList.add("formulario-grupo-correcto");
+
+        // Redirigir después de un breve delay
+        setTimeout(() => {
+          window.location.href = "/home.html";
+        }, 800);
+      } else {
+        // Credenciales incorrectas
+        loginAdvise.textContent = "Correo o contraseña incorrectos ";
+        loginAdvise.classList.add("formulario-input-error-activo");
+      }
+    } catch (error) {
+      console.error("Error al hacer login:", error);
+      loginAdvise.textContent = "No logramos conectarnos con el servidor";
+      loginAdvise.classList.add("formulario-input-error-activo");
+    }
   } else {
-    alert("Correo o contraseña incorrectos");
+    loginAdvise.textContent = "Por favor completa correctamente los campos.";
+    loginAdvise.classList.add("formulario-input-error-activo");
   }
 });
