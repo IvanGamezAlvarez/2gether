@@ -14,15 +14,15 @@ function showSlide(index) {
   });
 }
 
-document.getElementById("next").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-});
+// document.getElementById("next").addEventListener("click", () => {
+//   currentIndex = (currentIndex + 1) % slides.length;
+//   showSlide(currentIndex);
+// });
 
-document.getElementById("prev").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(currentIndex);
-});
+// document.getElementById("prev").addEventListener("click", () => {
+//   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+//   showSlide(currentIndex);
+// });
 
 // Mostrar la primera slide al cargar
 showSlide(currentIndex);
@@ -117,7 +117,7 @@ formulario.addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     try {
-      const response = await fetch("https://tu-api.com/api/login", {
+      const response = await fetch("https://api-aqui.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
