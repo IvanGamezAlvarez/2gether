@@ -208,52 +208,55 @@
                   </div>
                 </div>
 
-                <!--Nivel Educativo-->
-                <div class="nivel-educativo-container mb-3">
-                  <label for="nivelEducativo" class="form-label"
-                    >Nivel educativo</label
-                  >
-                  <select id="nivelEducativo" class="form-select">
-                    <option value="">Selecciona tu nivel educativo</option>
-                    <option value="primaria">Primaria</option>
-                    <option value="secundaria">Secundaria</option>
-                    <option value="preparatoria">Preparatoria</option>
-                    <option value="universidad">Universidad</option>
-                    <option value="postgrado">Autodidacta</option>
-                  </select>
-                </div>
+               <div class="educacion-container mb-3">
+    <h3>¿Qué deseas estudiar?</h3>
+    <label for="campoEstudio" class="form-label">Selecciona tu campo de estudio:</label>
+    <select id="campoEstudio" class="form-select">
+        <option value="" disabled selected>Selecciona un campo</option>
+        
+        <optgroup label="Áreas Académicas">
+            <option value="ciencias_humanidades">Ciencias y Humanidades (Matemáticas, Historia, Filosofía, etc.)</option>
+            <option value="tecnologia_digital">Tecnología y Habilidades Digitales (Programación, Diseño, Redes Sociales)</option>
+            <option value="idiomas_comunicacion">Idiomas y Comunicación (Inglés, Español, Francés, Oratoria)</option>
+        </optgroup>
+        
+        <optgroup label="Desarrollo y Práctica">
+            <option value="arte_creatividad">Arte y Creatividad (Música, Danza, Ilustración)</option>
+            <option value="bienestar_personal">Bienestar y Desarrollo Personal (Yoga, Nutrición, Liderazgo)</option>
+            <option value="oficios_practica">Oficios y Vida Práctica (Cocina, Carpintería, Finanzas Personales)</option>
+        </optgroup>
+    </select>
+</div>
 
-                <!--Campos de Estudio y Enseñanza-->
-                <div class="educacion-container mb-3">
-                  <h3>¿Qué deseas estudiar?</h3>
-                  <input
-                    type="text"
-                    id="campoEstudio"
-                    class="form-control"
-                    placeholder="Ingresa tu campo de estudio"
-                  />
-                </div>
+<div class="educacion-container mb-3">
+    <h3>¿Qué deseas enseñar?</h3>
+    <label for="campoEnsenanza" class="form-label">Selecciona tu campo de enseñanza:</label>
+    <select id="campoEnsenanza" class="form-select">
+        <option value="" disabled selected>Selecciona un campo</option>
+        
+        <optgroup label="Áreas de Conocimiento">
+            <option value="ciencias_humanidades_ens">Ciencias y Humanidades (Matemáticas, Historia, Filosofía, Biología)</option>
+            <option value="tecnologia_digital_ens">Tecnología y Habilidades Digitales (Programación, Edición de Video, Alfabetización Digital)</option>
+            <option value="idiomas_comunicacion_ens">Idiomas y Comunicación (Inglés, Español, Escritura, Oratoria)</option>
+        </optgroup>
+        
+        <optgroup label="Habilidades y Oficios">
+            <option value="arte_creatividad_ens">Arte y Creatividad (Música, Danza, Fotografía, Ilustración)</option>
+            <option value="bienestar_personal_ens">Bienestar y Desarrollo Personal (Yoga, Fitness, Inteligencia Emocional)</option>
+            <option value="oficios_practica_ens">Oficios y Vida Práctica (Cocina, Jardinería, Primeros Auxilios)</option>
+        </optgroup>
+    </select>
 
-                <div class="educacion-container mb-3">
-                  <h3>¿Qué deseas enseñar?</h3>
-                  <input
-                    type="text"
-                    id="campoEnsenanza"
-                    class="form-control"
-                    placeholder="Ingresa tu campo de enseñanza"
-                  />
-                  <div class="nivel-ensenanza-select mt-2">
-                    <label for="nivelEnsenanza" class="form-label"
-                      >Nivel de Enseñanza:</label
-                    >
-                    <select id="nivelEnsenanza" class="form-select">
-                      <option value="">Selecciona un nivel</option>
-                      <option value="basico">Básico</option>
-                      <option value="intermedio">Intermedio</option>
-                      <option value="avanzado">Avanzado</option>
-                    </select>
-                  </div>
-                </div>
+    <div class="nivel-ensenanza-select mt-2">
+        <label for="nivelEnsenanza" class="form-label">Nivel de Enseñanza:</label>
+        <select id="nivelEnsenanza" class="form-select">
+            <option value="">Selecciona un nivel</option>
+            <option value="basico">Básico</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+        </select>
+    </div>
+</div>
 
                 <!--Ubicación-->
                 <div class="ubicacion-container mb-4">
