@@ -70,7 +70,7 @@ function createCardHTML(user) {
               <div class="d-flex justify-content-between align-items-start">
                 <div>
                   <h6 class="fw-bold mb-1">${user.name}</h6> <p class="card-text text-muted mb-0 text-xs">${user.aboutMe || ''}</p> </div>
-                <a href="#" class="btn btn-custom fw-semibold px-3 text-nowrap ms-3">Ver perfil</a>
+                <a href="/src/pages/profile/profile.html?id=${user.id}" class="btn btn-custom fw-semibold px-3 text-nowrap ms-3">Ver perfil</a>
               </div>
               
               <div class="mt-3">
