@@ -110,7 +110,7 @@ function renderCards(users, containerId) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const userId = 1;
+  const userId = localStorage.getItem("userId");
   
   try {
     const [idealMatches, suggestions, helpOpportunities] = await Promise.all([
