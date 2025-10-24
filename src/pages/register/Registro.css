@@ -292,6 +292,15 @@ input[type="date"] {
   border: 2px solid #ddd;
   display: none;
 }
+.form-edad {
+  display: block;
+}
+.resultadoEdad {
+  display: block;
+}
+.edad-block {
+  display: block;
+}
 
 /*==================================*/
 /* 7. Responsividad y Validaciones */
