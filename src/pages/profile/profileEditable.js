@@ -1,61 +1,61 @@
 import { addElements } from "/src/common/navElements.js";
 
 function cambiarBanner(input) {
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          document.getElementById("bannerImage").src = e.target.result;
-          localStorage.setItem("bannerPersonalizado", e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("bannerImage").src = e.target.result;
+      localStorage.setItem("bannerPersonalizado", e.target.result);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
 
-    function cambiarAvatar(input) {
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          document.getElementById("avatarImage").src = e.target.result;
-          localStorage.setItem("avatarPersonalizado", e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
+function cambiarAvatar(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("avatarImage").src = e.target.result;
+      localStorage.setItem("avatarPersonalizado", e.target.result);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
 
-    // Cargar imágenes guardadas al iniciar
-    document.addEventListener("DOMContentLoaded", function () {
-      const bannerGuardado = localStorage.getItem("bannerPersonalizado");
-      const avatarGuardado = localStorage.getItem("avatarPersonalizado");
 
-      if (bannerGuardado) {
-        document.getElementById("bannerImage").src = bannerGuardado;
-      }
-      if (avatarGuardado) {
-        document.getElementById("avatarImage").src = avatarGuardado;
-      }
+document.addEventListener("DOMContentLoaded", function () {
+  const bannerGuardado = localStorage.getItem("bannerPersonalizado");
+  const avatarGuardado = localStorage.getItem("avatarPersonalizado");
 
-      // Inicializar tooltips
-      const tooltipTriggerList = [].slice.call(
-        document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      );
-      const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-      });
+  if (bannerGuardado) {
+    document.getElementById("bannerImage").src = bannerGuardado;
+  }
+  if (avatarGuardado) {
+    document.getElementById("avatarImage").src = avatarGuardado;
+  }
 
-      // Configuración inicial del área de texto
-      const textarea = document.getElementById("sobreMiTextarea");
-      const textoEstatico = document.getElementById("textoEstatico");
-      textarea.style.display = "none";
-      textoEstatico.style.display = "block";
-    });
-// Función para cambiar el banner
+
+  const tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+
+
+  const textarea = document.getElementById("sobreMiTextarea");
+  const textoEstatico = document.getElementById("textoEstatico");
+  textarea.style.display = "none";
+  textoEstatico.style.display = "block";
+});
+
 function cambiarBanner(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
       document.getElementById("bannerImage").src = e.target.result;
-      // Guardar la imagen en base de datos o localStorage
+
       localStorage.setItem("bannerPersonalizado", e.target.result);
     };
 
@@ -63,14 +63,14 @@ function cambiarBanner(input) {
   }
 }
 
-// Función para cambiar el avatar
+/
 function cambiarAvatar(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
       document.getElementById("avatarImage").src = e.target.result;
-      // Aquí puedes guardar la imagen en tu base de datos o localStorage
+
       localStorage.setItem("avatarPersonalizado", e.target.result);
     };
 
@@ -78,7 +78,7 @@ function cambiarAvatar(input) {
   }
 }
 
-// Cargar imágenes guardadas al iniciar (opcional)
+
 document.addEventListener("DOMContentLoaded", function () {
   const bannerGuardado = localStorage.getItem("bannerPersonalizado");
   const avatarGuardado = localStorage.getItem("avatarPersonalizado");
@@ -91,12 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("avatarImage").src = avatarGuardado;
   }
 });
-// Función para editar el nombre de usuario
+
 function editarUsername() {
   const usernameElement = document.getElementById("usernameText");
   const currentUsername = usernameElement.textContent;
 
-  // Crear input para editar
+
   const input = document.createElement("input");
   input.type = "text";
   input.value = currentUsername;
@@ -104,14 +104,14 @@ function editarUsername() {
     "form-control form-control-sm d-inline-block w-auto text-center";
   input.style.fontSize = "1.5rem";
   input.style.fontWeight = "bold";
-  input.maxLength = 20; // Límite de 20 caracteres
+  input.maxLength = 20;
 
-  // Reemplazar el h2 con el input
+
   usernameElement.replaceWith(input);
   input.focus();
   input.select();
 
-  // Botones de acción
+
   const saveBtn = document.createElement("button");
   saveBtn.className = "btn btn-success btn-sm ms-2";
   saveBtn.innerHTML = '<i class="bi bi-check"></i>';
@@ -129,19 +129,19 @@ function editarUsername() {
     cancelarEdicionUsername(currentUsername);
   };
 
-  // Ocultar botón de editar temporalmente
+
   document.getElementById("editUsernameBtn").style.display = "none";
 
-  // Insertar botones de acción
+
   input.parentNode.appendChild(saveBtn);
   input.parentNode.appendChild(cancelBtn);
 
-  // Validar en tiempo real mientras escribe
+
   input.addEventListener("input", function () {
     validarInputEnTiempoReal(this);
   });
 
-  // Guardar al presionar Enter
+
   input.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
       const validatedUsername = validarUsername(input.value.trim());
@@ -152,57 +152,57 @@ function editarUsername() {
   });
 }
 
-// Función para validar el username
+
 function validarUsername(username) {
-  // Verificar que no esté vacío
+
   if (!username) {
     alert("El nombre de usuario no puede estar vacío");
     return false;
   }
 
-  // Verificar longitud máxima
+
   if (username.length > 20) {
     alert("El nombre de usuario no puede tener más de 20 caracteres");
     return false;
   }
 
-  // Verificar caracteres permitidos (solo letras, números y espacios)
+
   const regex = /^[a-zA-Z0-9 ]+$/;
   if (!regex.test(username)) {
     alert("Solo se permiten letras, números y espacios");
     return false;
   }
 
-  // Verificar espacios consecutivos (más de 1 espacio seguido)
+
   if (/\s{2,}/.test(username)) {
     alert("No se permiten más de un espacio consecutivo");
     return false;
   }
 
-  // Limpiar espacios extra al inicio y final, y espacios consecutivos
+
   return username.replace(/\s+/g, " ").trim();
 }
 
-// Función para validar en tiempo real mientras escribe
+
 function validarInputEnTiempoReal(input) {
   let value = input.value;
 
-  // Remover caracteres no permitidos
+
   value = value.replace(/[^a-zA-Z0-9 ]/g, "");
 
-  // Limitar a 20 caracteres
+
   if (value.length > 20) {
     value = value.substring(0, 20);
   }
 
-  // Limitar espacios consecutivos (máximo 1 espacio)
+
   value = value.replace(/\s+/g, " ");
 
-  // Actualizar el valor del input
+
   input.value = value;
 }
 
-// Función para guardar el nuevo username
+
 function guardarUsername(newUsername) {
   // Crear nuevo elemento h2
   const newUsernameElement = document.createElement("h2");
