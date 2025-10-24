@@ -14,7 +14,7 @@ export default defineConfig({
         chat: resolve(__dirname, "src/pages/chat/chat.html"),
         profileEditable: resolve(__dirname, "src/pages/profile/profileEditable.html"),
         dashboard: resolve(__dirname, "src/pages/dashboard/dashboard.html"),
-        profile: resolve(__dirname, "profile.html"),
+        profile: resolve(__dirname, "src/pages/profile/profile.html"),
       },
     },
   },
