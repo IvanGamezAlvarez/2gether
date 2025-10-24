@@ -46,6 +46,12 @@ section {
   color: #f5f5f5;
 }
 
+.nav-title {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: large;
+}
+
 .top,
 .middle-part {
   display: flex;
@@ -66,9 +72,7 @@ section {
 .in-flex p {
   font-size: 1.3rem;
 }
-#create-account-button {
-  background-color: #fffaeb;
-}
+
 #ready-to-learn {
   text-align: center;
   margin: auto;
@@ -82,6 +86,8 @@ section {
   border-radius: 15px;
   color: white;
   margin: auto;
+  margin-top: 6rem;
+  height: 35rem;
 }
 
 .form-registrer h2 {
@@ -98,6 +104,7 @@ section {
 }
 
 .formulario-input {
+  border: none;
   width: 100%;
   padding: 10px;
   margin: 5px;
@@ -127,7 +134,8 @@ i {
   height: 40px;
   width: 100%;
   border-radius: 10px;
-  background-color: #fffaeb;
+  background-color: #e9d8a6;
+  border: none;
 }
 
 .options {
@@ -135,6 +143,12 @@ i {
   justify-content: space-between;
   font-size: 15px;
   gap: 7px;
+  font-size: small;
+  color: white;
+  text-decoration: underline;
+}
+.options a {
+  color: white;
 }
 
 .register-text {
@@ -153,11 +167,14 @@ i {
   padding: 5px;
   width: 50%;
   max-width: 800px;
+  background-color: #e9d8a6;
+  border: none;
 }
 .formulario-input-error {
   font-size: 12px;
   margin-bottom: 0;
   display: none;
+
   color: rgb(141, 135, 135);
 }
 .formulario-input-error-activo {
@@ -191,7 +208,6 @@ i {
   height: 250px;
   overflow: hidden;
   border-radius: 8px;
-  
 }
 
 .image-box img {
@@ -251,7 +267,6 @@ i {
   margin-top: 50px;
 }
 
-
 /* Titulo grande arriba de telefono*/
 .hero-title {
   font-size: 4rem;
@@ -267,39 +282,36 @@ i {
   position: relative;
   overflow: hidden;
   width: 100%;
-
 }
 
 .bloque-izquierdo {
   display: flex;
   align-items: center;
   position: relative;
-
 }
 
-.block-img{
-   position: absolute;
+.block-img {
+  position: absolute;
   max-width: 900px;
   width: 900px;
   height: auto;
   top: -13%;
   left: -36%;
-   transform: rotate(-15deg);
+  transform: rotate(-15deg);
   z-index: -1;
 }
 
 .phone-img {
   position: relative;
-  left: 14%;        /* pegada al borde izquierdo */
-  width: 550px;   /* o el tamaño que necesites */
+  left: 14%; /* pegada al borde izquierdo */
+  width: 550px; /* o el tamaño que necesites */
   transform: translateY(-6%);
-  z-index: 1;    /* encima del bloque amarillo */
+  z-index: 1; /* encima del bloque amarillo */
 }
 
 .descripcion {
-   margin-left: 30px;
+  margin-left: 30px;
   text-align: left;
-  
 }
 
 .descripcion h1 {
@@ -318,14 +330,13 @@ i {
 /*Bloque derecho*/
 
 .bloque-derecho {
-   display: flex;
+  display: flex;
   flex-direction: row-reverse; /* invierte el orden visual */
   align-items: center;
-
 }
 
 .block-img-blue {
- position: absolute;
+  position: absolute;
   transform: translateY(-50%);
   width: 900px;
   right: -26%;
@@ -346,12 +357,10 @@ i {
 .descripcion-izquierda {
   text-align: right;
   margin-left: auto;
-    transform: translateY(-30%);
+  transform: translateY(-30%);
   margin-right: 90px; /* mueve el bloque hacia la izquierda */
   max-width: 600px;
-
 }
-
 
 .descripcion-izquierda h1 {
   font-size: 2.5rem;
@@ -365,67 +374,56 @@ i {
   margin-top: 10px;
 }
 
-
-
 /*Bloque izquierdo Red*/
 
 .bloque-izquierdo-red {
-    display: flex;
+  display: flex;
   align-items: center;
   position: relative;
 }
 
 .block-img-red {
-    position: absolute;
+  position: absolute;
   max-width: 900px;
   width: 900px;
   height: auto;
-     transform: rotate(15deg);
+  transform: rotate(15deg);
   top: -35%;
   left: -12%;
   z-index: -1;
 }
 
 .phone-img-red {
-   position: relative;
-  left: 14%;        /* pegada al borde izquierdo */
-  width: 550px;   /* o el tamaño que necesites */
+  position: relative;
+  left: 14%; /* pegada al borde izquierdo */
+  width: 550px; /* o el tamaño que necesites */
   transform: translateY(-6%);
   z-index: 1;
 }
 
 .descripcion-red {
-     margin-left: 80px;
+  margin-left: 80px;
   text-align: left;
-  margin-top: -140px; 
+  margin-top: -140px;
 }
 
 .descripcion-red h1 {
-   font-size: 2.5rem; /* tamaño grande para títulos */
+  font-size: 2.5rem; /* tamaño grande para títulos */
   font-weight: 800;
   margin: 0;
 }
 
 .descripcion-red p {
-   font-size: 1.4rem; /* tamaño más pequeño para párrafo */
+  font-size: 1.4rem; /* tamaño más pequeño para párrafo */
   max-width: 54%;
   font-weight: 600;
   margin-top: 10px;
 }
 
-
-
-
-
-
-
-
-
-
 /* Sistema de recompensas */
 
 .badge-box {
-background-color: #014F63;
+  background-color: #014f63;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -437,7 +435,7 @@ background-color: #014F63;
   z-index: 0;
 }
 
-.badge-box .row { 
+.badge-box .row {
   gap: 90px;
 }
 
@@ -478,7 +476,7 @@ background-color: #014F63;
 }
 
 .col.raise {
- margin-top: -40px;
+  margin-top: -40px;
 }
 
 .col.raise-down {
@@ -486,8 +484,7 @@ background-color: #014F63;
 }
 
 .col img {
-
- width: 160px;
+  width: 160px;
   height: auto;
 }
 
@@ -503,7 +500,15 @@ background-color: #014F63;
   font-size: 1.25rem;
 }
 
+.top {
+  height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+}
 
+.car-title {
+  font-weight: 800;
+  font-size: 2.5rem;
+}
 
-
-
+.car-sub {
+  margin: 0;
+}
