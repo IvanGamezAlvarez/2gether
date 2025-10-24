@@ -63,7 +63,7 @@ function cambiarBanner(input) {
   }
 }
 
-/
+
 function cambiarAvatar(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();

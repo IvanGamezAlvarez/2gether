@@ -15,7 +15,7 @@
 //     });
 // }
 
-const API_BASE_URL = "http://localhost:8080/api/v1/users";
+const API_BASE_URL = "https://2gether.duckdns.org/api/v1/users";
 
 /**
  * Obtiene los usuarios con intercambio ideal para un usuario específico.
