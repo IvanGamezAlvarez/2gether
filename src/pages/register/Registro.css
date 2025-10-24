@@ -23,6 +23,9 @@ body {
   font-family: var(--font-montserrat);
   margin: 0;
 }
+h3 {
+  color: white;
+}
 
 .site-container {
   display: flex;
@@ -215,7 +218,7 @@ input[type="date"] {
 .ubicacion-container {
   /* Estas clases ahora solo sirven como selectores, usando los estilos de .util-container */
   /* Se pueden reemplazar por una clase de utilidad en el HTML si es preferible */
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(82, 103, 121, 0.418);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

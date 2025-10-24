@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const passwordInput = document.getElementById("password");
   const confirmPasswordInput = document.getElementById("confirmPassword");
   const avatarInput = document.getElementById("avatarInput");
+  const paisSelect = document.getElementById("pais-select");
 
   const ubicacionInfoDiv = document.getElementById("ubicacionInfo");
   const obtenerUbicacionBtn = document.getElementById("obtenerUbicacionBtn");
@@ -143,10 +144,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- Eventos del Formulario y Validaciones ---
 
   // 2. Evento de Envío (Submit)
+  // ---- SUBMIT ----
   form.addEventListener(
     "submit",
-    function (event) {
-      // Ejecuta todas las validaciones antes de revisar checkValidity()
+    async function (event) {
+      event.preventDefault();
+
+      // Ejecutar validaciones
       validarEmail();
       validarTelefono();
       validarContrasena();
@@ -155,47 +159,70 @@ document.addEventListener("DOMContentLoaded", function () {
       validarCampoEstudio();
       validarCampoEnsenanza();
 
-      // Verifica si el formulario es válido (incluyendo las validaciones de setCustomValidity)
+      form.classList.add("was-validated");
+
       if (!form.checkValidity()) {
-        event.preventDefault();
         event.stopPropagation();
-      } else {
-        // Si es válido, se podría proceder con el registro (simulado aquí)
-        event.preventDefault(); // Previene el envío real por ser demo
+        return;
+      }
 
-        // Lógica de registro/JSON (reubicada y simplificada)
-        const usuario = {
-          nombre: document.getElementById("nombre").value,
-          email: emailInput.value,
-          telefono: telefonoInput.value,
-          nivelEducativo: nivelEducativoSelect.value,
-          campoEstudio: campoEstudioInput.value,
-          campoEnsenanza: campoEnsenanzaInput.value,
-          // No se guardan contraseñas aquí, solo fines de demo
-        };
+      // Construimos el objeto del usuario
+      const usuario = {
+        nombre: document.getElementById("nombre").value,
+        email: emailInput.value,
+        telefono: telefonoInput.value,
+        fechaNacimiento: document.getElementById("fechaNacimiento").value,
+        campoEstudio: campoEstudioInput.value,
+        campoEnsenanza: campoEnsenanzaInput.value,
+        nivelEnsenanza: nivelEducativoSelect.value,
+        pais: paisSelect.value, // 👈 agregado
+      };
 
-        console.log(
-          "Usuario a registrar (JSON):",
-          JSON.stringify(usuario, null, 2)
-        );
+      console.log(
+        "Usuario a registrar (JSON):",
+        JSON.stringify(usuario, null, 2)
+      );
 
-        // Simulación de éxito (Asegúrate de tener un contenedor para alertas)
-        const alertContainer = document.querySelector(".card-body"); // Usaremos el body de la tarjeta
+      const alertContainer = document.querySelector(".card-body");
+
+      try {
+        // 🔥 Envío al endpoint real
+        const response = await fetch("https://tu-api.com/api/registro", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(usuario),
+        });
+
+        if (!response.ok) throw new Error("Error en el registro");
+
+        const data = await response.json();
+
         alertContainer.insertAdjacentHTML(
           "afterbegin",
           `
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    🎉 ¡Registro exitoso! Datos listos para ser enviados.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            `
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              🎉 ¡Registro exitoso! Bienvenido, ${usuario.nombre} desde ${usuario.pais}.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          `
         );
-        form.classList.remove("was-validated"); // Opcional: para que no muestre errores al limpiar
-        form.reset();
-      }
 
-      // Aplica la clase de validación de Bootstrap para mostrar feedback visual
-      form.classList.add("was-validated");
+        form.reset();
+        form.classList.remove("was-validated");
+      } catch (error) {
+        console.error("Error:", error);
+        alertContainer.insertAdjacentHTML(
+          "afterbegin",
+          `
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              ❌ Ocurrió un error al registrar. Inténtalo nuevamente.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          `
+        );
+      }
     },
     false
   );
@@ -226,57 +253,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- FUTURO: Subida al bucket ---
     // Ejemplo (cuando conectes tu API o SDK):
     /*
-  try {
-    const url = await subirImagenABucket(file);
-    document.getElementById("avatarImage").src = url;
-    usuario.fotoUrl = url; // agregar al objeto usuario antes de enviarlo
-  } catch (error) {
-    console.error("Error al subir la imagen:", error);
-  }
-  */
-  });
-
-  // 5. Geolocalización
-  obtenerUbicacionBtn.addEventListener("click", () => {
-    if (navigator.geolocation) {
-      ubicacionInfoDiv.textContent = "Obteniendo ubicación...";
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const latitud = position.coords.latitude;
-          const longitud = position.coords.longitude;
-          ubicacionInfoDiv.innerHTML = `
-                        <p class="mb-0"><strong>Latitud:</strong> ${latitud.toFixed(
-                          4
-                        )}</p>
-                        <p class="mb-0"><strong>Longitud:</strong> ${longitud.toFixed(
-                          4
-                        )}</p>
-                    `;
-        },
-        (error) => {
-          let mensajeError;
-          switch (error.code) {
-            case error.PERMISSION_DENIED:
-              mensajeError =
-                "El usuario denegó la solicitud de geolocalización.";
-              break;
-            case error.POSITION_UNAVAILABLE:
-              mensajeError = "La información de ubicación no está disponible.";
-              break;
-            case error.TIMEOUT:
-              mensajeError = "La solicitud de ubicación ha caducado.";
-              break;
-            default:
-              mensajeError = "Ha ocurrido un error desconocido.";
-              break;
-          }
-          ubicacionInfoDiv.textContent = mensajeError;
-        }
-      );
-    } else {
-      ubicacionInfoDiv.textContent =
-        "Tu navegador no soporta la API de Geolocalización.";
+    try {
+      const url = await subirImagenABucket(file);
+      document.getElementById("avatarImage").src = url;
+      usuario.fotoUrl = url; // agregar al objeto usuario antes de enviarlo
+    } catch (error) {
+      console.error("Error al subir la imagen:", error);
     }
+    */
   });
 
   // 6. Mensaje del Nivel Educativo (Opcional, se integra en el evento 'change')
