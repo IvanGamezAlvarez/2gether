@@ -1,3 +1,6 @@
+    body {
+    background-color: #FFFAEB;
+}
     .banner-container {
         cursor: pointer;
         overflow: hidden;
@@ -194,7 +197,7 @@
         color: white;
       }
 
-      .habilidad-ofrezco .btn-eliminar-habilidad {
+      .habilidad-ofrezco {
         background: #EE9B00;
         color: white;
       }
@@ -205,11 +208,11 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
 
-      .habilidad-ofrezco:hover .btn-eliminar-habilidad {
+      .habilidad-ofrezco:hover {
         background: #e69500;
       }
 
-      /* Habilidades que busco - Color 8CCCB6 */
+      
       .habilidad-busco {
         background-color: #8CCCB6;
         color: white;
@@ -229,20 +232,6 @@
       .habilidad-busco:hover .btn-eliminar-habilidad {
         background: #82c2ad;
       }
-
-      /* Estilos comunes */
-      .btn-eliminar-habilidad {
-        border: none;
-        cursor: pointer;
-        padding: 6px;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        border-radius: 20px 0 0 20px;
-        transition: all 0.2s ease;
-      }
-
       .habilidad-texto {
         padding: 6px 12px;
       }
@@ -336,6 +325,8 @@
       .btn-edit-discreto {
         width: 50px;
         height: 50px;
+        border: none !important;
+        outline: none !important;
         border-radius: 50%;
         padding: 0;
         display: flex;
@@ -376,4 +367,5 @@
         border-radius: 10%;
         border-color:#8CCCB6;
       }
+      
       
