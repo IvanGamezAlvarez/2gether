@@ -1,5 +1,53 @@
 import { addElements } from "/src/common/navElements.js";
 
+function cambiarBanner(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById("bannerImage").src = e.target.result;
+          localStorage.setItem("bannerPersonalizado", e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function cambiarAvatar(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById("avatarImage").src = e.target.result;
+          localStorage.setItem("avatarPersonalizado", e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    // Cargar imágenes guardadas al iniciar
+    document.addEventListener("DOMContentLoaded", function () {
+      const bannerGuardado = localStorage.getItem("bannerPersonalizado");
+      const avatarGuardado = localStorage.getItem("avatarPersonalizado");
+
+      if (bannerGuardado) {
+        document.getElementById("bannerImage").src = bannerGuardado;
+      }
+      if (avatarGuardado) {
+        document.getElementById("avatarImage").src = avatarGuardado;
+      }
+
+      // Inicializar tooltips
+      const tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      // Configuración inicial del área de texto
+      const textarea = document.getElementById("sobreMiTextarea");
+      const textoEstatico = document.getElementById("textoEstatico");
+      textarea.style.display = "none";
+      textoEstatico.style.display = "block";
+    });
 // Función para cambiar el banner
 function cambiarBanner(input) {
   if (input.files && input.files[0]) {

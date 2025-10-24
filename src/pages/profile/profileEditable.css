@@ -1,371 +1,342 @@
     body {
-    background-color: #FFFAEB;
-}
+      background-color: #FFFAEB;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Banner y avatar responsive */
     .banner-container {
-        cursor: pointer;
-        overflow: hidden;
-        height: 200px; 
-      }
+      cursor: pointer;
+      overflow: hidden;
+      height: 150px;
+    }
 
-      .banner-image {
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .banner-overlay {
-        background-color: rgba(0, 0, 0, 0.3);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-      }
-
-      .banner-container:hover .banner-overlay {
-        opacity: 1;
-      }
-
-      .banner-container:hover .banner-image {
-        transform: scale(1.02);
-      }
-
-      
-      .avatar-wrapper {
-        margin-top: -100px; 
-        z-index: 10;
-        position: relative;
-      }
-
-      
-      .avatar-container {
-        cursor: pointer;
-        display: inline-block;
-      }
-
-      .avatar-btn {
-        position: absolute;
-        bottom: 10px; 
-        right: 10px; 
-        width: 40px; 
-        height: 40px; 
-        border-radius: 50%;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: all 0.3s ease;
-        background-color: #007bff;
-        border: 2px solid white;
-        color: white;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        z-index: 5;
-        font-size: 1rem; 
-      }
-
-      .avatar-container:hover .avatar-btn {
-        opacity: 1;
-      }
-
-      
-      .icon-overlay {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        width: 40px;             
-        height: 40px;             
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;       
-        cursor: pointer;
-        font-size: 1.2rem;
-        transition: background-color 0.3s ease;
-      }
-
-      .icon-overlay:hover {
-        background-color: rgba(0,0,0,0.8);
-      }
-
-      .avatar {
-        width: 150px; 
-        height: 150px; 
-        border-radius: 50%;
-        transition: transform 0.3s ease;
-        border: none;
-        box-shadow: 0 2px 15px rgba(0,0,0,0.2); /* Sombra más pronunciada */
-        object-fit: cover;
-      }
-
-      .avatar-container:hover .avatar {
-        transform: scale(1.05);
-      }
-
-      
+    @media (min-width: 768px) {
       .banner-container {
-        cursor: pointer;
-        overflow: hidden;
-        height: 250px; 
-      }
-
-      .banner-image {
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .banner-overlay {
-        background-color: rgba(0, 0, 0, 0.3);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-      }
-
-      .banner-container:hover .banner-overlay {
-        opacity: 1;
-      }
-
-      .banner-container:hover .banner-image {
-        transform: scale(1.02);
-      }
-      
-      .text-box {
-        position: relative;
-      }
-
-      .post-card {
-        margin-bottom: 20px;
-        transition: transform 0.2s;
-      }
-
-      .post-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .post-image {
         height: 200px;
-        object-fit: cover;
       }
-      
-      .border-end {
-        border-right: 1px solid #0D0C0C !important; 
-      }
-      
-      .col-md-9.border-end {
-        border-right: 2px solid #dee2e6;
-      }    
-      .opinion-avatar {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        flex-shrink: 0;
-      }
+    }
 
-      /* Responsive para avatares */
-      @media (max-width: 768px) {
-        .opinion-avatar {
-          width: 40px;
-          height: 40px;
-        }
-        
-        .d-flex.align-items-start.gap-3 {
-          gap: 1rem !important;
-        }
+    @media (min-width: 992px) {
+      .banner-container {
+        height: 250px;
       }
-      
-      .disabled-btn {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
+    }
 
-      .habilidad-badge {
-        border-radius: 20px;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        font-size: 14px;
-        overflow: hidden;
-        margin: 2px;
-        transition: all 0.2s ease;
-        cursor: pointer;
-      }
+    .banner-image {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
 
-      
-      .habilidad-ofrezco {
-        background-color: #EE9B00;
-        color: white;
-      }
+    .banner-overlay {
+      background-color: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
 
-      .habilidad-ofrezco {
-        background: #EE9B00;
-        color: white;
-      }
+    .banner-container:hover .banner-overlay {
+      opacity: 1;
+    }
 
-      .habilidad-ofrezco:hover {
-        background-color: #e69500;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
+    .banner-container:hover .banner-image {
+      transform: scale(1.02);
+    }
 
-      .habilidad-ofrezco:hover {
-        background: #e69500;
-      }
+    .avatar-wrapper {
+      margin-top: -75px;
+      z-index: 10;
+      position: relative;
+    }
 
-      
-      .habilidad-busco {
-        background-color: #8CCCB6;
-        color: white;
+    @media (min-width: 768px) {
+      .avatar-wrapper {
+        margin-top: -100px;
       }
+    }
 
-      .habilidad-busco .btn-eliminar-habilidad {
-        background: #8CCCB6;
-        color: white;
-      }
+    .avatar-container {
+      cursor: pointer;
+      display: inline-block;
+    }
 
-      .habilidad-busco:hover {
-        background-color: #82c2ad;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-      .habilidad-busco:hover .btn-eliminar-habilidad {
-        background: #82c2ad;
+    @media (min-width: 768px) {
+      .avatar {
+        width: 150px;
+        height: 150px;
       }
-      .habilidad-texto {
-        padding: 6px 12px;
-      }
-      
-      
-      .badge-container {
-        position: relative;
-        display: inline-block;
-        transition: all 0.3s ease;
-      }
+    }
 
-      .badge-img {
-        width: 80px; 
-        height: 80px; 
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
+    .avatar-container:hover .avatar {
+      transform: scale(1.05);
+    }
 
-      .badge-container:hover .badge-img {
-        transform: scale(1.15) rotate(5deg);
-        filter: brightness(1.1);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      }
+    /* Botones de edición responsive */
+    .btn-edit-discreto {
+      width: 40px;
+      height: 40px;
+      border: none !important;
+      outline: none !important;
+      border-radius: 50%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      color: #000000;
+      transition: all 0.2s ease;
+    }
 
-      /* Responsive */
-      @media (max-width: 768px) {
-        .badge-img {
-          width: 100px;
-          height: 100px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .badge-img {
-          width: 80px;
-          height: 80px;
-        }
-      }
-
-      /* Tooltips personalizados */
-      .tooltip .tooltip-inner {
-        background-color: #000 !important;
-        color: white !important;
-        padding: 10px 15px;
-        border-radius: 8px;
-        font-size: 14px;
-        max-width: 300px;
-        text-align: center;
-      }
-
-      .tooltip.bs-tooltip-top .tooltip-arrow::before {
-        border-top-color: #000 !important;
-      }
-      
-      
-
-      /* Responsive para pantallas pequeñas */
-      @media (max-width: 768px) {
-        .opinion-item {
-          padding: 1rem !important;
-        }
-        
-        .opinion-text {
-          font-size: 0.85rem;
-        }
-      }
-      
-      .post-image {
-        width: 67%;
-        height: auto;
-        display: center;
-      }
-      
-      .custom-btn {
-        background-color: #BB3E03 !important;
-        border-color: #BB3E03 !important;
-        color: white !important;
-      }
-
-      .custom-btn:hover {
-        background-color: #9a3402 !important;
-        border-color: #9a3402 !important;
-        color: white !important;
-      }
-
-      .btn-final {
-        margin-bottom: 50px; 
-      }
-      
+    @media (min-width: 768px) {
       .btn-edit-discreto {
         width: 50px;
         height: 50px;
-        border: none !important;
-        outline: none !important;
-        border-radius: 50%;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        
-        color: #000000;
-        transition: all 0.2s ease;
       }
-      
-      .btn-edit-discreto:hover {
-        background-color: #000000;
-        color: white;
-      }
-      
-      .btn-edit-discreto-sm {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-      }
-      
-      .btn-edit-discreto-lg {
-        width: 36px;
-        height: 36px;
+    }
+
+    .btn-edit-discreto:hover {
+      background-color: #000000;
+      color: white;
+    }
+
+    .btn-edit-discreto-sm {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .btn-edit-discreto-lg {
+      width: 36px;
+      height: 36px;
+      font-size: 1rem;
+    }
+
+    /* Botón guardar cambios */
+    .btn-secondary {
+      padding: 0.5rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .btn-secondary {
+        padding: 0.5rem 3rem;
         font-size: 1rem;
       }
-      .bi-thrash{
-        width: 100px;
-        height: 100px;
-        font-size: 3rem;
+    }
+
+    /* Rating stars */
+    .rating-stars .bi-star-fill,
+    .rating-stars .bi-star-half {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .rating-stars .bi-star-fill,
+      .rating-stars .bi-star-half {
+        font-size: 1.25rem;
       }
-      .habilidad-ofrezco{
-        border-radius: 10%;
-        border-color:#e69500;
+    }
+
+    /* Layout principal responsive */
+    .border-end {
+      border-right: 1px solid #dee2e6 !important;
+    }
+
+    @media (max-width: 991.98px) {
+      .border-end {
+        border-right: none !important;
+        border-bottom: 2px solid #dee2e6 !important;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
       }
-      .habilidad-busco{
-        border-radius: 10%;
-        border-color:#8CCCB6;
+    }
+
+    /* Textos responsive */
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    h5 {
+      font-size: 1.1rem;
+    }
+
+    @media (min-width: 768px) {
+      h2 {
+        font-size: 2rem;
       }
-      
-      
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      h5 {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Área de texto Sobre mí */
+    .text-box textarea {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .text-box textarea {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    /* Habilidades responsive */
+    .habilidad-ofrezco,
+    .habilidad-busco {
+      border-radius: 25px;
+      padding: 0.5rem 1rem;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+
+      .habilidad-ofrezco,
+      .habilidad-busco {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    .habilidad-ofrezco {
+      background-color: #EE9B00;
+      color: white;
+    }
+
+    .habilidad-busco {
+      background-color: #8CCCB6;
+      color: white;
+    }
+
+    .habilidad-ofrezco:hover,
+    .habilidad-busco:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Insignias responsive */
+    .badge-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    @media (min-width: 576px) {
+      .badge-img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .badge-container:hover .badge-img {
+      transform: scale(1.15) rotate(5deg);
+      filter: brightness(1.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Publicaciones responsive */
+    .post-image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-card {
+      transition: transform 0.2s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Tooltips responsive */
+    .tooltip .tooltip-inner {
+      background-color: #000 !important;
+      color: white !important;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      max-width: 250px;
+    }
+
+    @media (min-width: 768px) {
+      .tooltip .tooltip-inner {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        max-width: 300px;
+      }
+    }
+
+    /* Espaciados responsive */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    /* Utilidades para márgenes responsive */
+    .ms-responsive-5 {
+      margin-left: 0.5rem;
+    }
+
+    .me-responsive-5 {
+      margin-right: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .ms-responsive-5 {
+        margin-left: 3rem;
+      }
+
+      .me-responsive-5 {
+        margin-right: 3rem;
+      }
+    }
+
+    /* Botones de acción en publicaciones */
+    .action-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .action-buttons {
+        justify-content: center;
+      }
+    }
