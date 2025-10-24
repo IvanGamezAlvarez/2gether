@@ -117,13 +117,16 @@ formulario.addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     try {
-      const response = await fetch("https://api-aqui.com/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://2gether.duckdns.org/api/v1/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Error en el servidor o credenciales inválidas");
@@ -131,10 +134,9 @@ formulario.addEventListener("submit", async (e) => {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok) {
         // Guardamos la información del usuario
-        localStorage.setItem("userData", JSON.stringify(data.user));
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", JSON.stringify(data.id));
 
         // Mostrar mensaje de éxito
         loginAdvise.textContent = "Inicio de sesión exitoso ✅";
@@ -142,7 +144,7 @@ formulario.addEventListener("submit", async (e) => {
 
         // Redirigir después de un breve delay
         setTimeout(() => {
-          window.location.href = "/home.html";
+          window.location.href = "/src/pages/dashboard/dashboard.html";
         }, 800);
       } else {
         // Credenciales incorrectas
@@ -151,11 +153,11 @@ formulario.addEventListener("submit", async (e) => {
       }
     } catch (error) {
       console.error("Error al hacer login:", error);
-      loginAdvise.textContent = "No logramos conectarnos con el servidor";
+      loginAdvise.textContent = "Correo o contraseña incorrectos";
       loginAdvise.classList.add("formulario-input-error-activo");
     }
   } else {
-    loginAdvise.textContent = "Por favor completa correctamente los campos.";
+    loginAdvise.textContent = "Correo o contraseña incorrectos.";
     loginAdvise.classList.add("formulario-input-error-activo");
   }
 });

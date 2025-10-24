@@ -78,16 +78,16 @@ document.addEventListener("DOMContentLoaded", function () {
   /**
    * @description Valida que el teléfono tenga exactamente 10 dígitos numéricos.
    */
-  function validarTelefono() {
-    const regexTelefono = /^[0-9]{10}$/;
-    if (!regexTelefono.test(telefonoInput.value)) {
-      telefonoInput.setCustomValidity(
-        "El teléfono debe tener exactamente 10 dígitos."
-      );
-    } else {
-      telefonoInput.setCustomValidity("");
-    }
-  }
+  // function validarTelefono() {
+  //   const regexTelefono = /^[0-9]{10}$/;
+  //   if (!regexTelefono.test(telefonoInput.value)) {
+  //     telefonoInput.setCustomValidity(
+  //       "El teléfono debe tener exactamente 10 dígitos."
+  //     );
+  //   } else {
+  //     telefonoInput.setCustomValidity("");
+  //   }
+  // }
 
   /**
    * @description Valida que la contraseña tenga al menos 8 caracteres.
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Ejecutar validaciones
       validarEmail();
-      validarTelefono();
+      // validarTelefono();
       validarContrasena();
       validarConfirmacionContrasena();
       validarFechaNacimiento();
@@ -168,14 +168,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Construimos el objeto del usuario
       const usuario = {
-        nombre: document.getElementById("nombre").value,
+        name: document.getElementById("nombre").value,
         email: emailInput.value,
-        telefono: telefonoInput.value,
-        fechaNacimiento: document.getElementById("fechaNacimiento").value,
-        campoEstudio: campoEstudioInput.value,
-        campoEnsenanza: campoEnsenanzaInput.value,
-        nivelEnsenanza: nivelEducativoSelect.value,
-        pais: paisSelect.value, // 👈 agregado
+        password: passwordInput.value,
+        birthDate: document.getElementById("fechaNacimiento").value,
+        skillToLearn: campoEstudioInput.value,
+        skillToTeach: campoEnsenanzaInput.value,
+        teachingLevel: nivelEducativoSelect.value,
+        country: paisSelect.value, // 👈 agregado
       };
 
       console.log(
@@ -187,13 +187,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         // 🔥 Envío al endpoint real
-        const response = await fetch("https://tu-api.com/api/registro", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(usuario),
-        });
+        const response = await fetch(
+          "https://2gether.duckdns.org/api/v1/users/register",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(usuario),
+          }
+        );
 
         if (!response.ok) throw new Error("Error en el registro");
 
@@ -203,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "afterbegin",
           `
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-              🎉 ¡Registro exitoso! Bienvenido, ${usuario.nombre} desde ${usuario.pais}.
+               ¡Registro exitoso! Bienvenido, ${usuario.name} desde ${usuario.country}.
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           `
@@ -229,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 3. Eventos para Validación en Tiempo Real (Input/Change)
   emailInput.addEventListener("input", validarEmail);
-  telefonoInput.addEventListener("input", validarTelefono);
+  // telefonoInput.addEventListener("input", validarTelefono);
   passwordInput.addEventListener("input", validarContrasena);
   confirmPasswordInput.addEventListener("input", validarConfirmacionContrasena);
   fechaNacimientoInput.addEventListener("change", validarFechaNacimiento);
