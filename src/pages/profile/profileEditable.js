@@ -1,4 +1,4 @@
-import { addElements } from "/src/common/navElements.js";
+// import { addElements } from "/src/common/navElements.js";
 
 // function cambiarBanner(input) {
 //   if (input.files && input.files[0]) {
@@ -344,8 +344,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ocultar el textarea inicialmente y mostrar el texto estático
   textarea.style.display = "none";
   textoEstatico.style.display = "block";
-  previewImage("coverInput", "coverImage");
-  previewImage("profileInput", "profileImage");
+  // previewImage("coverInput", "coverImage");
+  // previewImage("profileInput", "profileImage");
 });
 
 let tipoHabilidadActual = "";
@@ -422,5 +422,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+async function cargarPerfil() {
+  try {
+    // 🔹 Tomamos el userId del localStorage
+    const userId = localStorage.getItem("userId");
+    console.log(userId);
+    if (!userId) {
+      console.error("No se encontró userId en localStorage");
+      return;
+    }
 
-addElements();
+    // 🔹 Construimos la URL usando el userId
+    const url = `https://2gether.duckdns.org/api/v1/users/${userId}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error HTTP: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+
+    // 🔹 Actualizamos el DOM con los datos
+    document.getElementById("usernameText").textContent = data.name;
+    document.getElementById("textoEstatico").textContent = data.aboutMe;
+
+    // document.getElementById("bannerImage").src = data.banner;
+    // document.getElementById("avatarImage").src = data.avatar;
+
+    // Habilidades que ofrece
+    const ofrezcoContenedor = document.getElementById("habilidadesOfrezco");
+    ofrezcoContenedor.innerHTML = "";
+
+    const badge = document.createElement("span");
+    badge.className = "habilidad-ofrezco";
+    badge.textContent = data.skillToTeach;
+    ofrezcoContenedor.appendChild(badge);
+
+    // // Habilidades que busca
+    const buscoContenedor = document.getElementById("habilidadesBusco");
+    buscoContenedor.innerHTML = "";
+
+    const badgeToLearn = document.createElement("span");
+    badgeToLearn.className = "habilidad-busco";
+    badgeToLearn.textContent = data.skillToLearn;
+    buscoContenedor.appendChild(badgeToLearn);
+  } catch (error) {
+    console.error("❌ Error al cargar el perfil:", error);
+  }
+}
+
+// Ejecuta al cargar la página
+document.addEventListener("DOMContentLoaded", cargarPerfil);
