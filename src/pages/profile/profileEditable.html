@@ -1,228 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile editable</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="profileEditable.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile editable</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="profileEditable.css" />
-</head>
+  <body>
+    <header>
+      <div id="navbar"></div>
+    </header>
 
-<body>
-  <header>
-    <div id="navbar"></div>
-  </header>
-
-
-  <div class="text-center position-relative">
-
-    <div class="banner-container position-relative">
-      <img src="/public/img/profileEditable/banner-vidrio-esmerilado.jpg" alt="Banner de perfil editable"
-        class="w-100 banner-image" id="bannerImage" />
-      <div
-        class="banner-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-        <button type="button" class="btn-edit-discreto btn-edit-discreto-lg"
-          onclick="document.getElementById('bannerInput').click()">
-          <i class="bi bi-file-earmark-arrow-up"></i>
-        </button>
-      </div>
-      <input type="file" id="bannerInput" accept="image/*" style="display: none" onchange="cambiarBanner(this)" />
-    </div>
-
-
-    <div class="avatar-wrapper position-relative">
-      <div class="avatar-container position-relative d-inline-block">
-        <img class="avatar" src="/public/img/profileEditable/image-profile-generic.png" alt="Foto de perfil"
-          id="avatarImage" />
-        <button type="button" class="btn-edit-discreto btn-edit-discreto-lg"
-          onclick="document.getElementById('avatarInput').click()">
-          <i class="bi bi-camera-fill"></i>
-        </button>
-        <input type="file" id="avatarInput" accept="image/*" style="display: none" onchange="cambiarAvatar(this)" />
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-center gap-2 mt-3">
-        <h2 class="mb-0" id="usernameText">Nombre de usuario</h2>
-        <button type="button" class="btn-edit-discreto btn-edit-discreto-sm" id="editUsernameBtn"
-          onclick="editarUsername()">
-          <i class="bi bi-pencil"></i>
-        </button>
-      </div>
-      <button type="button" class="btn btn-secondary px-4 px-md-5 mt-2">
-        Guardar cambios
-      </button>
-
-
-      <div class="mt-3 text-center mb-4">
-        <div class="d-flex justify-content-center align-items-center gap-2 my-4 my-md-5">
-          <div class="d-flex gap-1 rating-stars">
-            <i class="bi bi-star-fill text-warning"></i>
-            <i class="bi bi-star-fill text-warning"></i>
-            <i class="bi bi-star-fill text-warning"></i>
-            <i class="bi bi-star-fill text-warning"></i>
-            <i class="bi bi-star-half text-warning"></i>
-          </div>
-          <span class="text-muted fw-bold">4.5/5</span>
+    <div class="text-center position-relative">
+      <div class="banner-container position-relative">
+        <img
+          src="/public/img/profileEditable/banner-vidrio-esmerilado.jpg"
+          alt="Banner de perfil editable"
+          class="w-100 banner-image"
+          id="bannerImage"
+        />
+        <div
+          class="banner-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+        >
+          <button
+            type="button"
+            class="btn-edit-discreto btn-edit-discreto-lg"
+            onclick="document.getElementById('bannerInput').click()"
+          >
+            <i class="bi bi-file-earmark-arrow-up"></i>
+          </button>
         </div>
+        <input
+          type="file"
+          id="bannerInput"
+          accept="image/*"
+          style="display: none"
+          onchange="cambiarBanner(this)"
+        />
       </div>
-    </div>
-  </div>
 
-
-  <div class="container px-2 px-md-4 text-start mt-4 mt-md-5">
-    <div class="row gx-3 gx-md-5">
-
-      <div class="col-lg-9 col-12 mt-4 mt-md-5 border-end">
-
-        <div class="mb-4">
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <h2><b>Sobre mí</b></h2>
-            <button type="button" class="btn-edit-discreto btn-edit-discreto-sm" id="btnEdit"
-              onclick="habilitarEdicion()">
-              <i class="bi bi-pencil"></i>
-            </button>
-          </div>
-
-          <div class="text-box m-2">
-
-            <div class="mb-3">
-              <textarea class="form-control text-start align-text-top" id="sobreMiTextarea" rows="6"
-                placeholder="Escribe algo sobre ti..." oninput="verificarCambios()" disabled
-                style="background-color: #f8f9fa; text-align: left; vertical-align: top;"></textarea>
-            </div>
-
-
-
-
-            <div class="text-end" id="botonesAccion" style="display: none">
-              <button type="button" class="btn-edit-discreto btn-edit-discreto-sm me-2" id="btnCancel"
-                onclick="cancelarEdicion()">
-                <i class="bi bi-x-lg"></i>
-              </button>
-              <button type="button" class="btn-edit-discreto btn-edit-discreto-sm" id="btnSave"
-                onclick="guardarCambios()" disabled
-                style="background-color: #28a745; border-color: #28a745; color: white;">
-                <i class="bi bi-check-lg"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row gx-3 gx-md-5">
-          <div class="col-md-6 mt-4 mt-md-5">
-            <div class="mb-3">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <h3><b>Enseño</b></h3>
-              </div>
-              <div id="habilidadesOfrezco" class="d-flex flex-wrap gap-2 align-items-center">
-                <button class="habilidad-ofrezco">
-                  <span class="fw-semibold">Java</span>
-                </button>
-                <button type="button" class="btn-edit-discreto btn-edit-discreto-sm" onclick="mostrarModal('ofrezco')">
-                  <i class="bi bi-pencil"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-5">
-            <div class="mb-3">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <h3><b>Busco aprender</b></h3>
-              </div>
-              <div id="habilidadesBusco" class="d-flex flex-wrap gap-2 align-items-center">
-                <button class="habilidad-busco">
-                  <span class="fw-semibold">React</span>
-                </button>
-                <button type="button" class="btn-edit-discreto btn-edit-discreto-sm" onclick="mostrarModal('busco')">
-                  <i class="bi bi-pencil"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="avatar-wrapper position-relative">
+        <div class="avatar-container position-relative d-inline-block">
+          <img
+            class="avatar"
+            src="/public/img/profileEditable/image-profile-generic.png"
+            alt="Foto de perfil"
+            id="avatarImage"
+          />
+          <button
+            type="button"
+            class="btn-edit-discreto btn-edit-discreto-lg"
+            onclick="document.getElementById('avatarInput').click()"
+          >
+            <i class="bi bi-camera-fill"></i>
+          </button>
+          <input
+            type="file"
+            id="avatarInput"
+            accept="image/*"
+            style="display: none"
+            onchange="cambiarAvatar(this)"
+          />
         </div>
       </div>
 
-
-      <div class="col-lg-3 col-12 mt-4 mt-md-5">
-        <div class="mb-4">
-          <h2 class="mb-3"><b>Insignias</b></h2>
-          <div class="d-flex justify-content-center justify-content-lg-start flex-wrap gap-3">
-            <div class="badge-container" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="Innovador Creativo - Por subir un proyecto con alta valoración">
-              <img src="/public/img/profileEditable/innovative-creative-badge.png" alt="Innovative Creative Badge"
-                class="badge-img" />
-            </div>
-            <div class="badge-container" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="Pionero - Por ser de los primeros en completar un proyecto">
-              <img src="/public/img/profileEditable/pioneer-badge.png" alt="Pioneer Badge" class="badge-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container my-4 my-md-5">
-    <h2 class="text-center mb-4"><b>Mi momento</b></h2>
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8">
-        <div class="text-center text-md-start mb-3 ms-responsive-5">
-          <h5 class="card-text fw-bold">Un poco de lo que enseño</h5>
-        </div>
-        <div class="text-center">
-          <div class="post-card">
-            <img src="/public/img/profileEditable/man-working-with-pencil.png" class="post-image"
-              alt="Imagen de publicación" />
-          </div>
-        </div>
-        <div class="action-buttons me-responsive-5">
-          <button type="button" class="btn-edit-discreto btn-edit-discreto-lg" id="editPostBtn">
+      <div class="container">
+        <div
+          class="d-flex align-items-center justify-content-center gap-2 mt-3"
+        >
+          <h2 class="mb-0" id="usernameText">Nombre de usuario</h2>
+          <button
+            type="button"
+            class="btn-edit-discreto btn-edit-discreto-sm"
+            id="editUsernameBtn"
+            onclick="editarUsername()"
+          >
             <i class="bi bi-pencil"></i>
           </button>
-          <button type="button" class="btn-edit-discreto btn-edit-discreto-lg" id="deletePostBtn">
-            <i class="bi bi-trash"></i>
-          </button>
+        </div>
+        <button type="button" class="btn btn-secondary px-4 px-md-5 mt-2">
+          Guardar cambios
+        </button>
+
+        <div class="mt-3 text-center mb-4">
+          <div
+            class="d-flex justify-content-center align-items-center gap-2 my-4 my-md-5"
+          >
+            <div class="d-flex gap-1 rating-stars">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-half text-warning"></i>
+            </div>
+            <span class="text-muted fw-bold">4.5/5</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
+    <div class="container px-2 px-md-4 text-start mt-4 mt-md-5">
+      <div class="row gx-3 gx-md-5">
+        <div class="col-lg-9 col-12 mt-4 mt-md-5 border-end">
+          <div class="mb-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <h2><b>Sobre mí</b></h2>
+              <button
+                type="button"
+                class="btn-edit-discreto btn-edit-discreto-sm"
+                id="btnEdit"
+                onclick="habilitarEdicion()"
+              >
+                <i class="bi bi-pencil"></i>
+              </button>
+            </div>
 
-  <div class="modal fade" id="modalHabilidad" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalTitulo">Agregar Habilidad</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <div class="text-box m-2">
+              <div class="mb-3">
+                <textarea
+                  class="form-control text-start align-text-top"
+                  id="sobreMiTextarea"
+                  rows="6"
+                  placeholder="Escribe algo sobre ti..."
+                  oninput="verificarCambios()"
+                  disabled
+                  style="
+                    background-color: #f8f9fa;
+                    text-align: left;
+                    vertical-align: top;
+                  "
+                ></textarea>
+                <div id="textoEstatico" class="texto-estatico"></div>
+              </div>
+
+              <div class="text-end" id="botonesAccion" style="display: none">
+                <button
+                  type="button"
+                  class="btn-edit-discreto btn-edit-discreto-sm me-2"
+                  id="btnCancel"
+                  onclick="cancelarEdicion()"
+                >
+                  <i class="bi bi-x-lg"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn-edit-discreto btn-edit-discreto-sm"
+                  id="btnSave"
+                  onclick="guardarCambios()"
+                  disabled
+                  style="
+                    background-color: #28a745;
+                    border-color: #28a745;
+                    color: white;
+                  "
+                >
+                  <i class="bi bi-check-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row gx-3 gx-md-5">
+            <div class="col-md-6 mt-4 mt-md-5">
+              <div class="mb-3">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <h3><b>Enseño</b></h3>
+                </div>
+                <div
+                  id="habilidadesOfrezco"
+                  class="d-flex flex-wrap gap-2 align-items-center"
+                >
+                  <button class="habilidad-ofrezco">
+                    <span class="fw-semibold">Java</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-edit-discreto btn-edit-discreto-sm"
+                    onclick="mostrarModal('ofrezco')"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-5">
+              <div class="mb-3">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <h3><b>Busco aprender</b></h3>
+                </div>
+                <div
+                  id="habilidadesBusco"
+                  class="d-flex flex-wrap gap-2 align-items-center"
+                >
+                  <button class="habilidad-busco">
+                    <span class="fw-semibold">React</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-edit-discreto btn-edit-discreto-sm"
+                    onclick="mostrarModal('busco')"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">
-          <input type="text" class="form-control" id="inputHabilidad" placeholder="Nombre de la habilidad" />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" onclick="agregarHabilidad()">Agregar</button>
+
+        <div class="col-lg-3 col-12 mt-4 mt-md-5">
+          <div class="mb-4">
+            <h2 class="mb-3"><b>Insignias</b></h2>
+            <div
+              class="d-flex justify-content-center justify-content-lg-start flex-wrap gap-3"
+            >
+              <div
+                class="badge-container"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Innovador Creativo - Por subir un proyecto con alta valoración"
+              >
+                <img
+                  src="/public/img/profileEditable/innovative-creative-badge.png"
+                  alt="Innovative Creative Badge"
+                  class="badge-img"
+                />
+              </div>
+              <div
+                class="badge-container"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Pionero - Por ser de los primeros en completar un proyecto"
+              >
+                <img
+                  src="/public/img/profileEditable/pioneer-badge.png"
+                  alt="Pioneer Badge"
+                  class="badge-img"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <footer id="foot-bar"></footer>
+    <div class="container my-4 my-md-5">
+      <h2 class="text-center mb-4"><b>Mi momento</b></h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div class="text-center text-md-start mb-3 ms-responsive-5">
+            <h5 class="card-text fw-bold">Un poco de lo que enseño</h5>
+          </div>
+          <div class="text-center">
+            <div class="post-card">
+              <img
+                src="/public/img/profileEditable/man-working-with-pencil.png"
+                class="post-image"
+                alt="Imagen de publicación"
+              />
+            </div>
+          </div>
+          <div class="action-buttons me-responsive-5">
+            <button
+              type="button"
+              class="btn-edit-discreto btn-edit-discreto-lg"
+              id="editPostBtn"
+            >
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button
+              type="button"
+              class="btn-edit-discreto btn-edit-discreto-lg"
+              id="deletePostBtn"
+            >
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-  <script type="module" src="./profileEditable.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-</body>
+    <div class="modal fade" id="modalHabilidad" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitulo">Agregar Habilidad</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              class="form-control"
+              id="inputHabilidad"
+              placeholder="Nombre de la habilidad"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="agregarHabilidad()"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <footer id="foot-bar"></footer>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <script src="./profileEditable.js" defer></script>
+    <script type="module" src="./navElements.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

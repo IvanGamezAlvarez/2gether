@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       if (resultadoEdadDiv)
         resultadoEdadDiv.innerHTML =
-          "<p class='text-danger mt-1'>❌ Eres menor de edad (se requiere 18+).</p>";
+          "<p class='text-danger edad-block mt-1'>❌ Eres menor de edad (se requiere 18+).</p>";
     } else {
       fechaNacimientoInput.setCustomValidity("");
       if (resultadoEdadDiv)
