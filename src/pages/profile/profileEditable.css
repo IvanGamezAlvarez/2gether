@@ -3,7 +3,7 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* Banner y avatar responsive */
+
     .banner-container {
       cursor: pointer;
       overflow: hidden;
@@ -82,7 +82,7 @@
       transform: scale(1.05);
     }
 
-    /* Botones de edición responsive */
+
     .btn-edit-discreto {
       width: 40px;
       height: 40px;
@@ -122,7 +122,7 @@
       font-size: 1rem;
     }
 
-    /* Botón guardar cambios */
+
     .btn-secondary {
       padding: 0.5rem 2rem;
       font-size: 0.9rem;
@@ -135,20 +135,21 @@
       }
     }
 
-    /* Rating stars */
+
     .rating-stars .bi-star-fill,
     .rating-stars .bi-star-half {
       font-size: 1rem;
     }
 
     @media (min-width: 768px) {
+
       .rating-stars .bi-star-fill,
       .rating-stars .bi-star-half {
         font-size: 1.25rem;
       }
     }
 
-    /* Layout principal responsive */
+
     .border-end {
       border-right: 1px solid #dee2e6 !important;
     }
@@ -162,7 +163,7 @@
       }
     }
 
-    /* Textos responsive */
+
     h2 {
       font-size: 1.5rem;
     }
@@ -189,7 +190,7 @@
       }
     }
 
-    /* Área de texto Sobre mí */
+
     .text-box textarea {
       font-size: 0.9rem;
       line-height: 1.5;
@@ -202,7 +203,7 @@
       }
     }
 
-    /* Habilidades responsive */
+
     .habilidad-ofrezco,
     .habilidad-busco {
       border-radius: 25px;
@@ -238,7 +239,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Insignias responsive */
+
     .badge-img {
       width: 60px;
       height: 60px;
@@ -260,7 +261,7 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
-    /* Publicaciones responsive */
+
     .post-image {
       width: 100%;
       max-width: 500px;
@@ -277,7 +278,7 @@
       transform: translateY(-5px);
     }
 
-    /* Tooltips responsive */
+
     .tooltip .tooltip-inner {
       background-color: #000 !important;
       color: white !important;
@@ -295,7 +296,7 @@
       }
     }
 
-    /* Espaciados responsive */
+
     .container {
       padding-left: 1rem;
       padding-right: 1rem;
@@ -308,7 +309,7 @@
       }
     }
 
-    /* Utilidades para márgenes responsive */
+
     .ms-responsive-5 {
       margin-left: 0.5rem;
     }
@@ -327,7 +328,7 @@
       }
     }
 
-    /* Botones de acción en publicaciones */
+
     .action-buttons {
       display: flex;
       justify-content: flex-end;
