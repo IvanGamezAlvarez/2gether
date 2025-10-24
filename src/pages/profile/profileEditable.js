@@ -1,27 +1,26 @@
 import { addElements } from "/src/common/navElements.js";
 
-function cambiarBanner(input) {
-  if (input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      document.getElementById("bannerImage").src = e.target.result;
-      localStorage.setItem("bannerPersonalizado", e.target.result);
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
+// function cambiarBanner(input) {
+//   if (input.files && input.files[0]) {
+//     const reader = new FileReader();
+//     reader.onload = function (e) {
+//       document.getElementById("bannerImage").src = e.target.result;
+//       localStorage.setItem("bannerPersonalizado", e.target.result);
+//     };
+//     reader.readAsDataURL(input.files[0]);
+//   }
+// }
 
-function cambiarAvatar(input) {
-  if (input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      document.getElementById("avatarImage").src = e.target.result;
-      localStorage.setItem("avatarPersonalizado", e.target.result);
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
+// function cambiarAvatar(input) {
+//   if (input.files && input.files[0]) {
+//     const reader = new FileReader();
+//     reader.onload = function (e) {
+//       document.getElementById("avatarImage").src = e.target.result;
+//       localStorage.setItem("avatarPersonalizado", e.target.result);
+//     };
+//     reader.readAsDataURL(input.files[0]);
+//   }
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
   const bannerGuardado = localStorage.getItem("bannerPersonalizado");
@@ -34,14 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("avatarImage").src = avatarGuardado;
   }
 
-
   const tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
   );
   const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
-
 
   const textarea = document.getElementById("sobreMiTextarea");
   const textoEstatico = document.getElementById("textoEstatico");
@@ -63,7 +60,6 @@ function cambiarBanner(input) {
   }
 }
 
-
 function cambiarAvatar(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
@@ -77,7 +73,6 @@ function cambiarAvatar(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const bannerGuardado = localStorage.getItem("bannerPersonalizado");
@@ -96,7 +91,6 @@ function editarUsername() {
   const usernameElement = document.getElementById("usernameText");
   const currentUsername = usernameElement.textContent;
 
-
   const input = document.createElement("input");
   input.type = "text";
   input.value = currentUsername;
@@ -106,11 +100,9 @@ function editarUsername() {
   input.style.fontWeight = "bold";
   input.maxLength = 20;
 
-
   usernameElement.replaceWith(input);
   input.focus();
   input.select();
-
 
   const saveBtn = document.createElement("button");
   saveBtn.className = "btn btn-success btn-sm ms-2";
@@ -129,18 +121,14 @@ function editarUsername() {
     cancelarEdicionUsername(currentUsername);
   };
 
-
   document.getElementById("editUsernameBtn").style.display = "none";
-
 
   input.parentNode.appendChild(saveBtn);
   input.parentNode.appendChild(cancelBtn);
 
-
   input.addEventListener("input", function () {
     validarInputEnTiempoReal(this);
   });
-
 
   input.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
@@ -152,20 +140,16 @@ function editarUsername() {
   });
 }
 
-
 function validarUsername(username) {
-
   if (!username) {
     alert("El nombre de usuario no puede estar vacío");
     return false;
   }
 
-
   if (username.length > 20) {
     alert("El nombre de usuario no puede tener más de 20 caracteres");
     return false;
   }
-
 
   const regex = /^[a-zA-Z0-9 ]+$/;
   if (!regex.test(username)) {
@@ -173,35 +157,27 @@ function validarUsername(username) {
     return false;
   }
 
-
   if (/\s{2,}/.test(username)) {
     alert("No se permiten más de un espacio consecutivo");
     return false;
   }
 
-
   return username.replace(/\s+/g, " ").trim();
 }
-
 
 function validarInputEnTiempoReal(input) {
   let value = input.value;
 
-
   value = value.replace(/[^a-zA-Z0-9 ]/g, "");
-
 
   if (value.length > 20) {
     value = value.substring(0, 20);
   }
 
-
   value = value.replace(/\s+/g, " ");
-
 
   input.value = value;
 }
-
 
 function guardarUsername(newUsername) {
   // Crear nuevo elemento h2
